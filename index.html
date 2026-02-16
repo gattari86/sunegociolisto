@@ -109,28 +109,34 @@
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i data-lucide="check-circle" class="icon-sm"></i>
-                    <span data-i18n="hero_badge">Servicio biling&uuml;e de confianza en Texas</span>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i data-lucide="check-circle" class="icon-sm"></i>
+                        <span data-i18n="hero_badge">Servicio biling&uuml;e de confianza en Texas</span>
+                    </div>
+
+                    <h1 class="hero-headline" data-i18n="hero_headline">Hazlo Oficial. Nosotros Hacemos el Papeleo, T&uacute; Haces Negocio.</h1>
+
+                    <p class="hero-subheadline" data-i18n="hero_subheadline">Formaci&oacute;n de LLC en Texas &mdash; r&aacute;pido, biling&uuml;e, sin complicaciones. Precio fijo de $597, sin sorpresas.</p>
+
+                    <div class="hero-cta">
+                        <a href="#contacto" class="btn btn-primary btn-pulse" data-cta="hero-primary">
+                            <span data-i18n="cta_start">Empieza Ahora</span>
+                        </a>
+                        <a href="https://wa.me/19417774933?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20formar%20mi%20LLC%20en%20Texas" class="btn btn-whatsapp" target="_blank" rel="noopener" data-cta="hero-whatsapp">
+                            <i data-lucide="message-circle" class="icon-sm"></i>
+                            <span data-i18n="cta_whatsapp">Pregunta en WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <span data-i18n="hero_trust">Servicio biling&uuml;e &bull; Precio fijo &bull; Sin cargos ocultos</span>
+                    </div>
                 </div>
 
-                <h1 class="hero-headline" data-i18n="hero_headline">Hazlo Oficial. Nosotros Hacemos el Papeleo, T&uacute; Haces Negocio.</h1>
-
-                <p class="hero-subheadline" data-i18n="hero_subheadline">Formaci&oacute;n de LLC en Texas &mdash; r&aacute;pido, biling&uuml;e, sin complicaciones. Precio fijo de $597, sin sorpresas.</p>
-
-                <div class="hero-cta">
-                    <a href="#contacto" class="btn btn-primary btn-pulse" data-cta="hero-primary">
-                        <span data-i18n="cta_start">Empieza Ahora</span>
-                    </a>
-                    <a href="https://wa.me/19417774933?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20formar%20mi%20LLC%20en%20Texas" class="btn btn-whatsapp" target="_blank" rel="noopener" data-cta="hero-whatsapp">
-                        <i data-lucide="message-circle" class="icon-sm"></i>
-                        <span data-i18n="cta_whatsapp">Pregunta en WhatsApp</span>
-                    </a>
-                </div>
-
-                <div class="hero-trust">
-                    <span data-i18n="hero_trust">Servicio biling&uuml;e &bull; Precio fijo &bull; Sin cargos ocultos</span>
+                <div class="hero-image">
+                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="600" height="600" loading="eager">
                 </div>
             </div>
         </div>
@@ -178,7 +184,12 @@
             </div>
 
             <div class="problem-callout">
-                <p data-i18n="problem_callout">No necesitas un abogado para formar tu LLC. Necesitas a alguien que sepa exactamente c&oacute;mo hacerlo.</p>
+                <div class="callout-layout">
+                    <div class="callout-image">
+                        <img src="images/entrepreneur.webp" alt="Emprendedora hispana con carpeta de documentos" width="120" height="120" loading="lazy">
+                    </div>
+                    <p data-i18n="problem_callout">No necesitas un abogado para formar tu LLC. Necesitas a alguien que sepa exactamente c&oacute;mo hacerlo.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -189,6 +200,11 @@
             <div class="section-header">
                 <h2 data-i18n="solution_headline">Todo lo que necesitas para formar tu LLC &mdash; en un solo paquete</h2>
             </div>
+
+            <div class="solution-layout">
+                <div class="solution-image">
+                    <img src="images/package.webp" alt="Documentos de formaci&oacute;n de LLC organizados en escritorio" width="600" height="450" loading="lazy">
+                </div>
 
             <div class="package-card">
                 <div class="package-header">
@@ -251,6 +267,7 @@
                     </a>
                 </div>
             </div>
+            </div><!-- end solution-layout -->
         </div>
     </section>
 
@@ -284,9 +301,11 @@
                     <p data-i18n="step_3_desc">Presentamos ante la Secretar&iacute;a de Estado de TX + solicitamos tu EIN con el IRS.</p>
                 </div>
 
-                <div class="step">
+                <div class="step step-has-image">
                     <div class="step-number">4</div>
-                    <div class="step-icon"><i data-lucide="file-check"></i></div>
+                    <div class="step-image">
+                        <img src="images/step-delivery.webp" alt="Entrega de documentos de LLC" width="280" height="200" loading="lazy">
+                    </div>
                     <h3 data-i18n="step_4_title">Recibe tus documentos</h3>
                     <p data-i18n="step_4_desc">Certificado de LLC, carta de EIN, plantilla de OA, y gu&iacute;a de pasos siguientes.</p>
                 </div>
@@ -381,8 +400,13 @@
             </div>
 
             <div class="trust-content">
-                <div class="trust-bio">
-                    <p data-i18n="trust_bio">Ricardo Gattas-Moras, fundador de Poppy Marketing & Consulting LLC, cre&oacute; Negocio Listo para servir a la comunidad hispana emprendedora en Texas. Con experiencia en operaciones de negocios y marketing digital, entendemos lo que necesitas para empezar &mdash; y los obst&aacute;culos que te frenan.</p>
+                <div class="trust-bio-layout">
+                    <div class="trust-headshot">
+                        <img src="images/ricardo.webp" alt="Ricardo Gattas-Moras, fundador de Negocio Listo" width="200" height="200" loading="lazy">
+                    </div>
+                    <div class="trust-bio">
+                        <p data-i18n="trust_bio">Ricardo Gattas-Moras, fundador de Poppy Marketing & Consulting LLC, cre&oacute; Negocio Listo para servir a la comunidad hispana emprendedora en Texas. Con experiencia en operaciones de negocios y marketing digital, entendemos lo que necesitas para empezar &mdash; y los obst&aacute;culos que te frenan.</p>
+                    </div>
                 </div>
 
                 <div class="trust-signals">
