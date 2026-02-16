@@ -38,7 +38,9 @@ const translations = {
 
         // Solution
         solution_headline: 'Todo lo que necesitas para formar tu LLC \u2014 en un solo paquete',
-        price_label: 'Precio fijo \u2022 Sin sorpresas',
+        price_label: 'Pago único \u2022 Sin sorpresas \u2022 Sin cargos recurrentes',
+        price_nl_table: '$597 <span class="price-once">(pago único)</span>',
+        price_lz_table: '$0 + $249+<span class="price-recurring">/año</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Presentado ante la Secretaría de Estado de Texas',
         feat_2_title: 'EIN (Número de Identificación Federal)',
@@ -160,7 +162,9 @@ const translations = {
 
         // Solution
         solution_headline: 'Everything you need to form your LLC \u2014 in one package',
-        price_label: 'Flat rate \u2022 No surprises',
+        price_label: 'One-time payment \u2022 No surprises \u2022 No recurring fees',
+        price_nl_table: '$597 <span class="price-once">(one-time)</span>',
+        price_lz_table: '$0 + $249+<span class="price-recurring">/year</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Filed with the Texas Secretary of State',
         feat_2_title: 'EIN (Federal Tax ID Number)',
@@ -308,10 +312,17 @@ class LanguageToggle {
         const elements = document.querySelectorAll('[data-i18n]');
         const langData = translations[this.currentLang];
 
+        // Keys that contain HTML markup
+        const htmlKeys = new Set(['price_nl_table', 'price_lz_table']);
+
         elements.forEach((el) => {
             const key = el.getAttribute('data-i18n');
             if (langData[key]) {
-                el.textContent = langData[key];
+                if (htmlKeys.has(key)) {
+                    el.innerHTML = langData[key];
+                } else {
+                    el.textContent = langData[key];
+                }
             }
         });
 
