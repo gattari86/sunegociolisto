@@ -4,6 +4,23 @@
    Mobile-first, ported from Designer's Arsenal
    ========================================== */
 
+/* Font fallback metrics — prevents CLS during web font swap */
+@font-face {
+    font-family: 'Montserrat Fallback';
+    src: local('Arial Black'), local('Arial Bold'), local('Arial');
+    size-adjust: 113.5%;
+    ascent-override: 84%;
+    descent-override: 22%;
+}
+
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 107.4%;
+    ascent-override: 90%;
+    descent-override: 22.4%;
+}
+
 :root {
     /* Brand Colors */
     --color-primary: #E07A5F;
@@ -23,12 +40,12 @@
     --color-text: #3D405B;
 
     /* WhatsApp */
-    --color-whatsapp: #128C7E;
+    --color-whatsapp: #0E806F;
     --color-whatsapp-dark: #075E54;
 
-    /* Typography */
-    --font-display: 'Montserrat', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography — fallback fonts have adjusted metrics to prevent CLS */
+    --font-display: 'Montserrat', 'Montserrat Fallback', sans-serif;
+    --font-body: 'Inter', 'Inter Fallback', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
