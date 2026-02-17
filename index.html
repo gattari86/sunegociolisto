@@ -49,8 +49,9 @@
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- Animate.css (non-render-blocking) -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -59,7 +60,28 @@
     <!-- Lucide Icons (deferred — non-render-blocking) -->
     <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Critical inline CSS to prevent FOUC while main stylesheet loads async -->
+    <style>
+        :root{--color-primary:#E07A5F;--color-secondary:#3D405B;--color-background:#F4F1DE;--color-white:#FFFFFF;--font-display:'Montserrat',sans-serif;--font-body:'Inter',sans-serif}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-padding-top:80px}
+        body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--color-secondary);background-color:var(--color-background);-webkit-font-smoothing:antialiased}
+        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+        img{max-width:100%;height:auto;display:block}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #E5E2D6}
+        .header-container{display:flex;align-items:center;justify-content:space-between;height:64px}
+        .logo-text{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--color-primary);letter-spacing:0.05em}
+        .hero{padding:calc(64px + 4rem) 0 4rem;background:linear-gradient(180deg,var(--color-background) 0%,var(--color-white) 100%)}
+        .hero-content{text-align:center;max-width:700px;margin:0 auto}
+        .hero-headline{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--color-secondary);line-height:1.15;margin-bottom:1.5rem}
+        .hero-cta{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;min-height:54px}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-family:var(--font-body);font-size:1rem;font-weight:600;border:none;border-radius:0.75rem;cursor:pointer;white-space:nowrap;text-decoration:none}
+        .hero-grid{display:flex;flex-direction:column;align-items:center;gap:3rem}
+        @media(min-width:768px){.hero-headline{font-size:2.75rem}.hero-cta{flex-direction:row;justify-content:flex-start}.hero-grid{flex-direction:row;gap:3rem}.hero-content{text-align:left;flex:1}}
+    </style>
+
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
     <!-- Schema.org — Full structured data graph -->
     <script type="application/ld+json">
@@ -258,6 +280,7 @@
         </nav>
     </header>
 
+    <main>
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="hero">
         <div class="container">
@@ -302,7 +325,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="800" height="449" loading="eager" fetchpriority="high">
+                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="800" height="449" loading="eager" fetchpriority="high" sizes="(max-width: 767px) 360px, (max-width: 1023px) 320px, 400px">
                 </div>
             </div>
 
@@ -762,16 +785,18 @@
         </div>
     </section>
 
+    </main>
+
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h4 class="footer-logo">NEGOCIO LISTO</h4>
+                    <p class="footer-logo">NEGOCIO LISTO</p>
                     <p data-i18n="footer_tagline">Formaci&oacute;n de LLC en Texas. R&aacute;pido, biling&uuml;e, sin complicaciones.</p>
                 </div>
                 <div class="footer-column">
-                    <h4 data-i18n="footer_links">Enlaces</h4>
+                    <p class="footer-heading" data-i18n="footer_links">Enlaces</p>
                     <ul>
                         <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
                         <li><a href="#como-funciona" data-i18n="nav_how">C&oacute;mo Funciona</a></li>
@@ -780,7 +805,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 data-i18n="footer_contact">Contacto</h4>
+                    <p class="footer-heading" data-i18n="footer_contact">Contacto</p>
                     <ul>
                         <li><a href="tel:+12812064198">(281) 206-4198</a></li>
                         <li><a href="https://wa.me/message/NWCGJ4MXZO33G1" target="_blank" rel="noopener">WhatsApp: (832) 319-9790</a></li>
@@ -788,7 +813,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <p class="footer-heading" data-i18n="footer_legal">Legal</p>
                     <ul>
                         <li><a href="#" data-i18n="footer_privacy">Pol&iacute;tica de Privacidad</a></li>
                         <li><a href="#" data-i18n="footer_terms">T&eacute;rminos de Servicio</a></li>
