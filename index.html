@@ -40,16 +40,24 @@
     <meta name="twitter:description" content="Servicio biling&uuml;e de formaci&oacute;n de LLC. Precio fijo $597. Sin sorpresas.">
     <meta name="twitter:image" content="https://www.sunegociolisto.com/og-image.png">
 
-    <!-- Fonts -->
+    <!-- Preload LCP image -->
+    <link rel="preload" href="images/hero.webp" as="image" type="image/webp">
+
+    <!-- Preconnect to CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Animate.css (non-render-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></noscript>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Lucide Icons (deferred — non-render-blocking) -->
+    <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -294,7 +302,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="600" height="600" loading="eager">
+                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="800" height="449" loading="eager" fetchpriority="high">
                 </div>
             </div>
 
@@ -812,6 +820,6 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
