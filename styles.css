@@ -9,6 +9,7 @@
     --color-primary: #E07A5F;
     --color-primary-dark: #B85A3F;
     --color-primary-light: #E8927D;
+    --color-primary-text: #B5553B;  /* WCAG AA accessible terracotta for text (4.85:1 on white) */
     --color-secondary: #3D405B;
     --color-accent: #81B29A;
     --color-accent-dark: #6A9A82;
@@ -117,7 +118,7 @@ p {
 strong { color: var(--color-secondary); font-weight: 600; }
 
 a {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
@@ -168,7 +169,7 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .btn-primary {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-text);
     color: var(--color-white);
     box-shadow: var(--shadow-md);
 }
@@ -309,7 +310,7 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .nav-desktop a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
 }
 
 .nav-desktop a:hover::after {
@@ -378,12 +379,12 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .lang-toggle:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: var(--color-primary-text);
+    color: var(--color-primary-text);
 }
 
 .lang-active {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     font-weight: 700;
 }
 
@@ -843,7 +844,7 @@ section {
 }
 
 .addon-header .feature-check {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
 }
 
 .addon-header strong {
@@ -1119,7 +1120,7 @@ td.highlight .price-once {
 }
 
 .trust-signal .icon-md {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     flex-shrink: 0;
 }
 
@@ -1191,7 +1192,7 @@ td.highlight .price-once {
 }
 
 .faq-question:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
 }
 
 .faq-chevron {
@@ -1325,7 +1326,7 @@ td.highlight .price-once {
 }
 
 .footer-column a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
 }
 
 .footer-disclaimer {
@@ -1814,14 +1815,16 @@ td.highlight .price-once {
    ACCESSIBILITY
    ========================================== */
 
-.btn:focus,
-a:focus,
-.faq-question:focus {
-    outline: 2px solid var(--color-primary);
+.btn:focus-visible,
+a:focus-visible,
+.lang-toggle:focus-visible,
+.hamburger:focus-visible,
+.faq-question:focus-visible {
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
 }
 
-.faq-question:focus {
+.faq-question:focus-visible {
     outline-offset: -2px;
 }
 

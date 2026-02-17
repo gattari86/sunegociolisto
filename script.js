@@ -308,6 +308,11 @@ class LanguageToggle {
         this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
         this.applyLanguage();
 
+        // GA4: track language switch
+        if (window.gtag) {
+            gtag('event', 'lang_switch', { language: this.currentLang });
+        }
+
         // Update URL without reload
         const url = new URL(window.location);
         if (this.currentLang === 'en') {
@@ -411,6 +416,12 @@ class FAQAccordion {
             item.classList.add('active');
             answer.style.maxHeight = answer.scrollHeight + 'px';
             if (question) question.setAttribute('aria-expanded', 'true');
+
+            // GA4: track FAQ expand
+            if (window.gtag) {
+                const qText = question.textContent.trim().substring(0, 80);
+                gtag('event', 'faq_expand', { question_text: qText });
+            }
         }
     }
 }
@@ -544,9 +555,13 @@ class CTATracker {
     }
 
     track(ctaId, text) {
-        // Google Analytics
+        // Google Analytics — differentiate WhatsApp vs phone vs general CTA
         if (window.gtag) {
-            gtag('event', 'cta_click', { cta_id: ctaId });
+            const href = document.querySelector(`[data-cta="${ctaId}"]`)?.href || '';
+            let eventName = 'cta_click';
+            if (href.includes('wa.me')) eventName = 'whatsapp_click';
+            else if (href.includes('tel:')) eventName = 'phone_click';
+            gtag('event', eventName, { cta_id: ctaId, cta_text: text });
         }
 
         // Local storage log
@@ -679,5 +694,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const atEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 4;
             this.classList.toggle('scrolled-end', atEnd);
         });
+    }
+
+    // GA4: Scroll depth tracking (50%, 75%, 90%)
+    if (window.gtag) {
+        const scrollThresholds = [50, 75, 90];
+        const scrollFired = new Set();
+        window.addEventListener('scroll', function () {
+            const scrollPct = Math.round(
+                (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+            );
+            scrollThresholds.forEach(function (threshold) {
+                if (scrollPct >= threshold && !scrollFired.has(threshold)) {
+                    scrollFired.add(threshold);
+                    gtag('event', 'scroll_depth', { percent: threshold });
+                }
+            });
+        }, { passive: true });
     }
 });
