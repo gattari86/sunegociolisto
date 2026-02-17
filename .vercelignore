@@ -1,0 +1,7 @@
+# Exclude original PNG source images (only .webp served)
+images/*.png
+images/*.jpg
+
+# Dev files
+.git
+.gitignore

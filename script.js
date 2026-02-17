@@ -86,19 +86,19 @@ const translations = {
         col_lz: 'LegalZoom',
         col_notario: 'Notario / Doc Prep',
         col_diy: 'Hacerlo Solo',
-        row_price: 'Precio',
+        row_price: '<strong>Precio</strong>',
         row_price_diy: '$300 (solo tarifa estatal)',
-        row_bilingual: 'Bilingüe',
+        row_bilingual: '<strong>Bilingüe</strong>',
         row_bilingual_notario: 'A veces',
-        row_personal: 'Servicio Personal',
-        row_speed: 'Rapidez',
+        row_personal: '<strong>Servicio Personal</strong>',
+        row_speed: '<strong>Rapidez</strong>',
         speed_nl: '5\u20137 días',
         speed_lz: '7\u201330 días',
         speed_notario: 'Varía',
         speed_diy: 'Si no hay errores',
-        row_hidden: 'Cargos Ocultos',
+        row_hidden: '<strong>Cargos Ocultos</strong>',
         hidden_notario: 'Común',
-        row_whatsapp: 'Soporte WhatsApp',
+        row_whatsapp: '<strong>Soporte WhatsApp</strong>',
 
         // Trust
         trust_headline: 'Quién Está Detrás de Negocio Listo',
@@ -221,19 +221,19 @@ const translations = {
         col_lz: 'LegalZoom',
         col_notario: 'Notario / Doc Prep',
         col_diy: 'Do It Yourself',
-        row_price: 'Price',
+        row_price: '<strong>Price</strong>',
         row_price_diy: '$300 (state fee only)',
-        row_bilingual: 'Bilingual',
+        row_bilingual: '<strong>Bilingual</strong>',
         row_bilingual_notario: 'Sometimes',
-        row_personal: 'Personal Service',
-        row_speed: 'Speed',
+        row_personal: '<strong>Personal Service</strong>',
+        row_speed: '<strong>Speed</strong>',
         speed_nl: '5\u20137 days',
         speed_lz: '7\u201330 days',
         speed_notario: 'Varies',
         speed_diy: 'If no errors',
-        row_hidden: 'Hidden Fees',
+        row_hidden: '<strong>Hidden Fees</strong>',
         hidden_notario: 'Common',
-        row_whatsapp: 'WhatsApp Support',
+        row_whatsapp: '<strong>WhatsApp Support</strong>',
 
         // Trust
         trust_headline: 'Who\u2019s Behind Negocio Listo',
@@ -340,7 +340,7 @@ class LanguageToggle {
         const langData = translations[this.currentLang];
 
         // Keys that contain HTML markup
-        const htmlKeys = new Set(['price_nl_table', 'price_lz_table']);
+        const htmlKeys = new Set(['price_nl_table', 'price_lz_table', 'row_price', 'row_bilingual', 'row_personal', 'row_speed', 'row_hidden', 'row_whatsapp']);
 
         elements.forEach((el) => {
             const key = el.getAttribute('data-i18n');
