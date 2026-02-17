@@ -61,7 +61,7 @@ const translations = {
         feat_5_title: 'Servicio completamente bilingüe',
         feat_5_desc: 'Inglés + Español en cada paso del proceso',
         state_fee_note: 'La tarifa estatal de $300 se paga directamente al estado (separada de nuestro servicio).',
-        addon_dba_title: 'Add-On: DBA (Assumed Name Certificate) \u2014 $99',
+        addon_dba_title: 'Complemento: DBA (Certificado de Nombre Asumido) \u2014 $99',
         addon_dba_desc: '\u00BFTu negocio opera con un nombre diferente al de tu LLC? Presentamos tu DBA ante el condado y la Secretar\u00EDa de Estado. Tarifa estatal de $25 se paga por separado.',
         package_highlight: 'Precio fijo. Sin sorpresas. Sin contratos a largo plazo.',
         cta_form_llc: 'Forma Tu LLC Hoy',
