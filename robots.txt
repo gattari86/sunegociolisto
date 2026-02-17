@@ -1,0 +1,62 @@
+# Negocio Listo — robots.txt
+# https://www.sunegociolisto.com/robots.txt
+# Last updated: 2026-02-16
+
+# =============================================
+# Default: all crawlers
+# =============================================
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+Disallow: /search
+
+# =============================================
+# Google
+# =============================================
+User-agent: Googlebot
+Allow: /
+
+# Google AI training (Gemini) — allowed for LLM discoverability
+User-agent: Google-Extended
+Allow: /
+
+# =============================================
+# OpenAI
+# =============================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# =============================================
+# Anthropic
+# =============================================
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# =============================================
+# Perplexity
+# =============================================
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# =============================================
+# Sitemap
+# =============================================
+Sitemap: https://www.sunegociolisto.com/sitemap.xml

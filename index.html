@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formaci&oacute;n de LLC en Texas — r&aacute;pido, biling&uuml;e, sin complicaciones. Precio fijo de $597. Negocio Listo te ayuda a formalizar tu negocio.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#E07A5F">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Negocio Listo — Formaci&oacute;n de LLC en Texas | Servicio Biling&uuml;e</title>
@@ -11,6 +12,7 @@
     <!-- Hreflang -->
     <link rel="alternate" hreflang="es" href="https://www.sunegociolisto.com/">
     <link rel="alternate" hreflang="en" href="https://www.sunegociolisto.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.sunegociolisto.com/">
     <link rel="canonical" href="https://www.sunegociolisto.com/">
 
     <!-- Open Graph -->
@@ -34,33 +36,147 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Schema.org LocalBusiness -->
+    <!-- Schema.org — Full structured data graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Negocio Listo",
-        "description": "Servicio biling&uuml;e de formaci&oacute;n de LLC en Texas. Preparaci&oacute;n de documentos para peque&ntilde;os negocios.",
-        "url": "https://www.sunegociolisto.com",
-        "telephone": "+19417774933",
-        "email": "hola@sunegociolisto.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Katy",
-            "addressRegion": "TX",
-            "postalCode": "77493",
-            "addressCountry": "US"
-        },
-        "parentOrganization": {
-            "@type": "Organization",
-            "name": "Poppy Marketing & Consulting LLC"
-        },
-        "areaServed": {
-            "@type": "State",
-            "name": "Texas"
-        },
-        "priceRange": "$597",
-        "knowsLanguage": ["es", "en"]
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.sunegociolisto.com/#organization",
+                "name": "Negocio Listo",
+                "url": "https://www.sunegociolisto.com",
+                "email": "hola@sunegociolisto.com",
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Poppy Marketing & Consulting LLC"
+                },
+                "knowsLanguage": ["es", "en"]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.sunegociolisto.com/#website",
+                "name": "Negocio Listo",
+                "url": "https://www.sunegociolisto.com",
+                "publisher": { "@id": "https://www.sunegociolisto.com/#organization" },
+                "inLanguage": ["es", "en"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.sunegociolisto.com/#webpage",
+                "url": "https://www.sunegociolisto.com",
+                "name": "Negocio Listo — Formaci\u00f3n de LLC en Texas | Servicio Biling\u00fce",
+                "description": "Formaci\u00f3n de LLC en Texas — r\u00e1pido, biling\u00fce, sin complicaciones. Precio fijo de $597.",
+                "isPartOf": { "@id": "https://www.sunegociolisto.com/#website" },
+                "about": { "@id": "https://www.sunegociolisto.com/#organization" },
+                "inLanguage": "es",
+                "breadcrumb": { "@id": "https://www.sunegociolisto.com/#breadcrumb" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.sunegociolisto.com/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "https://www.sunegociolisto.com/"
+                    }
+                ]
+            },
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.sunegociolisto.com/#localbusiness",
+                "name": "Negocio Listo",
+                "description": "Servicio biling\u00fce de formaci\u00f3n de LLC en Texas. Preparaci\u00f3n de documentos para peque\u00f1os negocios.",
+                "url": "https://www.sunegociolisto.com",
+                "telephone": "+19417774933",
+                "email": "hola@sunegociolisto.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Katy",
+                    "addressRegion": "TX",
+                    "postalCode": "77493",
+                    "addressCountry": "US"
+                },
+                "areaServed": {
+                    "@type": "State",
+                    "name": "Texas"
+                },
+                "priceRange": "$597",
+                "knowsLanguage": ["es", "en"]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.sunegociolisto.com/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfCu\u00e1nto cuesta formar una LLC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nuestro servicio cuesta $597 (precio fijo). Adem\u00e1s, el estado de Texas cobra una tarifa de $300 que se paga directamente al estado. Total: $897."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfCu\u00e1nto tiempo tarda?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Generalmente 5 a 7 d\u00edas h\u00e1biles despu\u00e9s de recibir toda tu informaci\u00f3n."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfNecesito un n\u00famero de seguro social?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No necesariamente. Manejamos solicitudes con ITIN a trav\u00e9s de la v\u00eda de fax con el IRS."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfEs lo mismo que un notario?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. NO somos notarios p\u00fablicos. Somos preparadores de documentos legales. No damos asesor\u00eda legal."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfQu\u00e9 pasa si mi nombre es rechazado?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Volvemos a presentar con un nuevo nombre. Solo pagas la nueva tarifa estatal si aplica. Nuestro servicio no tiene cargo adicional."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfPuedo formar mi LLC si no tengo papeles?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "La formaci\u00f3n de la LLC en s\u00ed no requiere estatus migratorio. Sin embargo, para el EIN puede ser necesario un ITIN o SSN."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfNecesito un abogado?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Para la formaci\u00f3n b\u00e1sica de una LLC, no. Para situaciones complejas (m\u00faltiples socios, propiedad intelectual, etc.), te referimos a un abogado."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "\u00bfQu\u00e9 incluye el paquete?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Incluye: presentaci\u00f3n del Certificate of Formation (Form 205) ante TX SOS, solicitud de EIN ante el IRS, plantilla de Operating Agreement, y gu\u00eda de pasos siguientes post-formaci\u00f3n. Todo en servicio biling\u00fce."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </head>
