@@ -18,10 +18,19 @@ const translations = {
 
         // Hero
         hero_badge: 'Servicio bilingüe de confianza en Texas',
-        hero_headline: 'Hazlo Oficial. Nosotros Hacemos el Papeleo, Tú Haces Negocio.',
-        hero_subheadline: 'Formación de LLC en Texas — rápido, bilingüe, sin complicaciones. Precio fijo de $597, sin sorpresas.',
+        hero_headline: 'Forma tu LLC en Texas, sin complicaciones.',
+        hero_subheadline: 'Nosotros hacemos el papeleo. T\u00FA te enfocas en tu negocio.',
         cta_start: 'Empieza Ahora',
         cta_whatsapp: 'Pregunta en WhatsApp',
+        cta_whatsapp_start: 'Empezar por WhatsApp',
+        cta_see_price: 'Ver precio fijo',
+        hero_compliance: 'Servicio de preparaci\u00F3n y presentaci\u00F3n de documentos. No asesor\u00EDa legal o fiscal.',
+        trust_strip_1: 'Servicio biling\u00FCe',
+        trust_strip_2: 'Soporte en Texas',
+        trust_strip_3: 'Respuesta r\u00E1pida por WhatsApp',
+        testimonial_quote: '\u201CPens\u00E9 que iba a ser complicado, pero me explicaron todo paso a paso en espa\u00F1ol. En menos de una semana ten\u00EDa mi LLC lista.\u201D',
+        testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
+        trust_metric_label: 'd\u00EDas h\u00E1biles promedio',
         hero_trust: 'Servicio bilingüe \u2022 Precio fijo \u2022 Sin cargos ocultos',
 
         // Problem
@@ -144,10 +153,19 @@ const translations = {
 
         // Hero
         hero_badge: 'Trusted bilingual service in Texas',
-        hero_headline: 'Make It Official. We Handle the Paperwork, You Handle the Business.',
-        hero_subheadline: 'Texas LLC Formation \u2014 fast, bilingual, no hassle. Flat rate $597, no surprises.',
+        hero_headline: 'Form Your LLC in Texas, No Complications.',
+        hero_subheadline: 'We handle the paperwork. You focus on your business.',
         cta_start: 'Get Started Now',
         cta_whatsapp: 'Ask on WhatsApp',
+        cta_whatsapp_start: 'Start on WhatsApp',
+        cta_see_price: 'See Fixed Price',
+        hero_compliance: 'Document preparation and filing service. Not legal or tax advice.',
+        trust_strip_1: 'Bilingual service',
+        trust_strip_2: 'Texas-based support',
+        trust_strip_3: 'Fast WhatsApp response',
+        testimonial_quote: '\u201CI thought it would be complicated, but they explained everything step by step in Spanish. In less than a week I had my LLC ready.\u201D',
+        testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
+        trust_metric_label: 'avg. business days',
         hero_trust: 'Bilingual service \u2022 Flat rate \u2022 No hidden fees',
 
         // Problem
@@ -494,6 +512,7 @@ class MicroAnimationController {
             '.problem-callout',
             '.timeline-badge',
             '.comparison-table-wrapper',
+            '.hero-testimonial',
         ];
 
         document.querySelectorAll(selectors.join(', ')).forEach((el, index) => {
