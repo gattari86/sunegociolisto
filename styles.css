@@ -312,10 +312,13 @@ a:hover { color: var(--color-primary-dark); }
     gap: 0.25rem;
     background-color: var(--color-whatsapp);
     color: var(--color-white);
-    padding: 0.4rem 0.75rem;
+    padding: 0.5rem 0.875rem;
     border-radius: var(--radius-md);
     font-size: 0.85rem;
     font-weight: 600;
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
     transition: background-color var(--transition-fast);
 }
 
@@ -332,11 +335,16 @@ a:hover { color: var(--color-primary-dark); }
     background: none;
     border: 1px solid var(--color-medium-gray);
     border-radius: var(--radius-md);
-    padding: 0.3rem 0.6rem;
+    padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     color: var(--color-secondary);
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all var(--transition-fast);
 }
 
@@ -763,6 +771,41 @@ section {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+/* Scroll hint for mobile — fade gradient on right edge */
+.comparison-table-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(to left, var(--color-white), transparent);
+    pointer-events: none;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    z-index: 1;
+}
+
+.comparison-table-wrapper.scrolled-end::after {
+    opacity: 0;
+}
+
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--color-dark-gray);
+    margin-top: var(--spacing-xs);
+    opacity: 0.7;
+}
+
+.scroll-hint svg {
+    width: 14px;
+    height: 14px;
 }
 
 .comparison-table {
@@ -1094,6 +1137,10 @@ td.highlight .price-once {
     font-style: italic;
 }
 
+.lang-hidden {
+    display: none;
+}
+
 .footer-bottom {
     text-align: center;
 }
@@ -1110,7 +1157,7 @@ td.highlight .price-once {
 
 .whatsapp-float {
     position: fixed;
-    bottom: 90px;
+    bottom: 100px;
     right: 20px;
     width: 56px;
     height: 56px;
@@ -1170,7 +1217,6 @@ td.highlight .price-once {
 .hero-image {
     max-width: 360px;
     width: 100%;
-    order: -1;
 }
 
 .hero-image img {
@@ -1278,6 +1324,7 @@ td.highlight .price-once {
    ========================================== */
 
 .final-cta {
+    background-color: var(--color-secondary);
     background: linear-gradient(135deg, rgba(61, 64, 91, 0.88) 0%, rgba(44, 46, 66, 0.92) 100%),
                 url('images/cta-bg.webp') center/cover no-repeat;
 }
@@ -1303,6 +1350,10 @@ td.highlight .price-once {
 .stagger-2 { transition-delay: 0.1s; }
 .stagger-3 { transition-delay: 0.2s; }
 .stagger-4 { transition-delay: 0.3s; }
+.stagger-5 { transition-delay: 0.4s; }
+.stagger-6 { transition-delay: 0.5s; }
+.stagger-7 { transition-delay: 0.6s; }
+.stagger-8 { transition-delay: 0.7s; }
 
 /* Card hover lift */
 .problem-card,
@@ -1466,8 +1517,17 @@ td.highlight .price-once {
     }
 
     .callout-image img {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Hide scroll hint on tablet+ */
+    .scroll-hint {
+        display: none;
+    }
+
+    .comparison-table-wrapper::after {
+        display: none;
     }
 }
 
@@ -1502,6 +1562,11 @@ td.highlight .price-once {
     /* Larger hero image on desktop */
     .hero-image {
         max-width: 400px;
+    }
+
+    .callout-image img {
+        width: 110px;
+        height: 110px;
     }
 }
 

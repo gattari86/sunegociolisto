@@ -33,7 +33,7 @@ const translations = {
         problem_3_title: '\u201CNotarios\u201D que cobran de más',
         problem_3_desc: 'Operadores sin licencia cobrando $1,500+ por un trámite de $300.',
         problem_4_title: 'No saber por dónde empezar',
-        problem_4_desc: '\u00BFtLLC? \u00BFDBA? \u00BFEIN? \u00BFOperating Agreement? Es abrumador.',
+        problem_4_desc: '\u00BFLLC? \u00BFDBA? \u00BFEIN? \u00BFOperating Agreement? Es abrumador.',
         problem_callout: 'No necesitas un abogado para formar tu LLC. Necesitas a alguien que sepa exactamente cómo hacerlo.',
 
         // Solution
@@ -335,6 +335,19 @@ class LanguageToggle {
                 inactive.textContent = this.currentLang === 'es' ? 'EN' : 'ES';
             }
         }
+
+        // Toggle footer disclaimers — show only active language
+        const disclaimerEs = document.getElementById('disclaimerEs');
+        const disclaimerEn = document.getElementById('disclaimerEn');
+        if (disclaimerEs && disclaimerEn) {
+            if (this.currentLang === 'es') {
+                disclaimerEs.classList.remove('lang-hidden');
+                disclaimerEn.classList.add('lang-hidden');
+            } else {
+                disclaimerEs.classList.add('lang-hidden');
+                disclaimerEn.classList.remove('lang-hidden');
+            }
+        }
     }
 }
 
@@ -417,7 +430,8 @@ class MobileMenu {
     init() {
         if (!this.hamburger || !this.navMobile) return;
 
-        this.hamburger.addEventListener('click', () => {
+        this.hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             this.navMobile.classList.toggle('open');
         });
 
@@ -426,6 +440,13 @@ class MobileMenu {
             link.addEventListener('click', () => {
                 this.navMobile.classList.remove('open');
             });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!this.navMobile.contains(e.target) && !this.hamburger.contains(e.target)) {
+                this.navMobile.classList.remove('open');
+            }
         });
     }
 }
@@ -474,7 +495,7 @@ class MicroAnimationController {
         document.querySelectorAll(selectors.join(', ')).forEach((el, index) => {
             el.classList.add('animate-on-scroll');
             // Add stagger class for grid items
-            const stagger = (index % 4) + 1;
+            const stagger = (index % 8) + 1;
             el.classList.add('stagger-' + stagger);
             observer.observe(el);
         });
@@ -610,8 +631,12 @@ function throttle(func, limit) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide icons
-    if (window.lucide) {
-        lucide.createIcons();
+    try {
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    } catch (e) {
+        console.warn('Lucide icons failed to load:', e);
     }
 
     // Initialize all modules
@@ -623,4 +648,13 @@ document.addEventListener('DOMContentLoaded', () => {
     new CTATracker();
     new SmoothScroller();
     new MobileStickyController();
+
+    // Comparison table scroll-end detection (hide fade when scrolled to end)
+    const compWrapper = document.getElementById('comparisonWrapper');
+    if (compWrapper) {
+        compWrapper.addEventListener('scroll', function () {
+            const atEnd = this.scrollLeft + this.clientWidth >= this.scrollWidth - 4;
+            this.classList.toggle('scrolled-end', atEnd);
+        });
+    }
 });
