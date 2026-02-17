@@ -50,6 +50,7 @@
     --color-secondary: #3D405B;
     --color-accent: #81B29A;
     --color-accent-dark: #6A9A82;
+    --color-accent-text: #2E6B4F;  /* WCAG AA accessible green for text (5.55:1 on sand, 6.30:1 on white) */
     --color-background: #F4F1DE;
     --color-white: #FFFFFF;
 
@@ -317,7 +318,7 @@ a:hover { color: var(--color-primary-dark); }
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.25rem;
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     letter-spacing: 0.05em;
 }
 
@@ -495,12 +496,12 @@ a:hover { color: var(--color-primary-dark); }
     margin-bottom: var(--spacing-lg);
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-accent-dark);
+    color: var(--color-accent-text);
     border: 1px solid rgba(129, 178, 154, 0.25);
 }
 
 .hero-badge .icon-sm {
-    color: var(--color-accent);
+    color: var(--color-accent-text);
 }
 
 .hero-headline {
@@ -535,7 +536,6 @@ a:hover { color: var(--color-primary-dark); }
 .hero-compliance {
     font-size: 0.75rem;
     color: var(--color-dark-gray);
-    opacity: 0.75;
     margin-bottom: var(--spacing-md);
     line-height: 1.4;
 }
@@ -553,11 +553,11 @@ a:hover { color: var(--color-primary-dark); }
     gap: 0.3rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-accent-dark);
+    color: var(--color-accent-text);
 }
 
 .trust-strip-item .icon-sm {
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     width: 16px;
     height: 16px;
 }
@@ -607,7 +607,7 @@ a:hover { color: var(--color-primary-dark); }
     font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 800;
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     line-height: 1;
 }
 
@@ -987,7 +987,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xs);
-    background: var(--color-accent);
+    background: var(--color-accent-text);
     color: var(--color-white);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-xl);

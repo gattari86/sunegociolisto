@@ -60,7 +60,7 @@
 
     <!-- Critical inline CSS to prevent FOUC while main stylesheet loads async -->
     <style>
-        :root{--color-primary:#E07A5F;--color-secondary:#3D405B;--color-background:#F4F1DE;--color-white:#FFFFFF;--font-display:'Montserrat',sans-serif;--font-body:'Inter',sans-serif}
+        :root{--color-primary:#E07A5F;--color-primary-text:#B5553B;--color-secondary:#3D405B;--color-background:#F4F1DE;--color-white:#FFFFFF;--font-display:'Montserrat',sans-serif;--font-body:'Inter',sans-serif}
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         html{scroll-padding-top:80px}
         body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--color-secondary);background-color:var(--color-background);-webkit-font-smoothing:antialiased}
@@ -68,7 +68,7 @@
         img{max-width:100%;height:auto;display:block}
         .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #E5E2D6}
         .header-container{display:flex;align-items:center;justify-content:space-between;height:64px}
-        .logo-text{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--color-primary);letter-spacing:0.05em}
+        .logo-text{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--color-primary-text);letter-spacing:0.05em}
         .hero{padding:calc(64px + 4rem) 0 4rem;background:linear-gradient(180deg,var(--color-background) 0%,var(--color-white) 100%)}
         .hero-content{text-align:center;max-width:700px;margin:0 auto}
         .hero-headline{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--color-secondary);line-height:1.15;margin-bottom:1.5rem}
