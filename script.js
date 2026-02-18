@@ -562,8 +562,13 @@ class CTATracker {
         // Google Analytics — differentiate WhatsApp vs phone vs general CTA
         if (window.gtag) {
             let eventName = 'cta_click';
-            if (href.includes('wa.me')) eventName = 'whatsapp_click';
-            else if (href.includes('tel:')) eventName = 'phone_click';
+            if (href.includes('wa.me')) {
+                eventName = 'whatsapp_click';
+                gtag('event', 'conversion', { send_to: 'AW-17962571856/qbcICODl_fobENCwnPVC', value: 50.0, currency: 'USD' });
+            } else if (href.includes('tel:')) {
+                eventName = 'phone_click';
+                gtag('event', 'conversion', { send_to: 'AW-17962571856/riTzCITtifsbENCwnPVC', value: 50.0, currency: 'USD' });
+            }
             gtag('event', eventName, { cta_id: ctaId, cta_text: text });
         }
 
