@@ -99,6 +99,7 @@ const translations = {
         row_hidden: '<strong>Cargos Ocultos</strong>',
         hidden_notario: 'Común',
         row_whatsapp: '<strong>Soporte WhatsApp</strong>',
+        scroll_hint: 'Desliza para ver más',
 
         // Trust
         trust_headline: 'Quién Está Detrás de Negocio Listo',
@@ -234,6 +235,7 @@ const translations = {
         row_hidden: '<strong>Hidden Fees</strong>',
         hidden_notario: 'Common',
         row_whatsapp: '<strong>WhatsApp Support</strong>',
+        scroll_hint: 'Swipe to see more',
 
         // Trust
         trust_headline: 'Who\u2019s Behind Negocio Listo',
@@ -638,11 +640,6 @@ class MobileStickyController {
             },
             { threshold: 0.3 }
         );
-
-        // Start hidden
-        this.sticky.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-        this.sticky.style.transform = 'translateY(100%)';
-        this.sticky.style.opacity = '0';
 
         observer.observe(this.hero);
     }
