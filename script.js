@@ -557,13 +557,20 @@ class CTATracker {
     }
 
     track(ctaId, text) {
+        const href = document.querySelector(`[data-cta="${ctaId}"]`)?.href || '';
+
         // Google Analytics — differentiate WhatsApp vs phone vs general CTA
         if (window.gtag) {
-            const href = document.querySelector(`[data-cta="${ctaId}"]`)?.href || '';
             let eventName = 'cta_click';
             if (href.includes('wa.me')) eventName = 'whatsapp_click';
             else if (href.includes('tel:')) eventName = 'phone_click';
             gtag('event', eventName, { cta_id: ctaId, cta_text: text });
+        }
+
+        // Meta Pixel — Lead for WhatsApp, Contact for phone
+        if (window.fbq) {
+            if (href.includes('wa.me')) fbq('track', 'Lead', { content_name: ctaId });
+            else if (href.includes('tel:')) fbq('track', 'Contact', { content_name: ctaId });
         }
 
         // Local storage log
