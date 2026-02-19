@@ -1,6 +1,11 @@
 # Exclude original PNG source images (only .webp served)
-images/*.png
+# Exception: logo.png is used in email templates
 images/*.jpg
+images/cta-bg.png
+images/entrepreneur.png
+images/hero.png
+images/package.png
+images/step-delivery.png
 
 # Dev files
 .git
