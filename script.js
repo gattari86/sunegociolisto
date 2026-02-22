@@ -27,9 +27,9 @@ const translations = {
         trust_strip_1: 'Servicio biling\u00FCe',
         trust_strip_2: 'Soporte en Texas',
         trust_strip_3: 'Respuesta r\u00E1pida por WhatsApp',
-        testimonial_quote: '\u201CPens\u00E9 que iba a ser complicado, pero me explicaron todo paso a paso en espa\u00F1ol. En menos de una semana ten\u00EDa mi LLC lista.\u201D',
-        testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'd\u00EDas h\u00E1biles promedio',
+        hero_stat_price: 'desde \u2014 pago \u00FAnico',
+        hero_stat_bilingual: 'servicio biling\u00FCe',
 
         // Problem
         problem_headline: 'Sabemos lo frustrante que es\u2026',
@@ -56,20 +56,20 @@ const translations = {
         feat_wa_basic_desc: 'Durante el proceso de presentación',
         feat_wa_full_title: 'Soporte WhatsApp completo',
         feat_wa_full_desc: 'Durante el proceso + 30 días post-formación',
-        feat_ra_title: 'Registered Agent \u2014 Año 1 incluido',
-        feat_ra_desc: 'Protege tu dirección personal del registro público. Renovación: $149/año.',
-        feat_memo_title: 'Memo de Próximos Pasos',
-        feat_memo_desc: 'Guía personalizada post-formación',
+        feat_ra_title: 'Agente Registrado \u2014 A\u00F1o 1 incluido',
+        feat_ra_desc: 'Protege tu direcci\u00F3n personal del registro p\u00FAblico. Renovaci\u00F3n: $149/a\u00F1o.',
+        feat_memo_title: 'Gu\u00EDa de Pr\u00F3ximos Pasos',
+        feat_memo_desc: 'Documento personalizado post-formaci\u00F3n',
         price_nl_table: '$297\u2013$497 <span class="price-once">(pago \u00FAnico + tarifa estatal)</span>',
         price_lz_table: '$0 + $249+<span class="price-recurring">/a\u00F1o en cargos</span>',
-        feat_1_title: 'LLC Certificate of Formation (Form 205)',
-        feat_1_desc: 'Presentado ante la Secretaría de Estado de Texas',
-        feat_2_title: 'EIN (Número de Identificación Federal)',
+        feat_1_title: 'Certificado de Formaci\u00F3n de LLC (Form 205)',
+        feat_1_desc: 'Presentado ante la Secretar\u00EDa de Estado de Texas',
+        feat_2_title: 'N\u00FAmero de Identificaci\u00F3n Fiscal (EIN)',
         feat_2_desc: 'Lo solicitamos en tu nombre ante el IRS',
-        feat_3_title: 'Operating Agreement (Acuerdo Operativo)',
-        feat_3_desc: 'Plantilla de autoayuda para miembro único',
-        feat_4_title: 'Checklist de pasos siguientes',
-        feat_4_desc: 'Guía post-formación para que no te pierdas',
+        feat_3_title: 'Acuerdo Operativo (Operating Agreement)',
+        feat_3_desc: 'Plantilla de autoayuda para miembro \u00FAnico',
+        feat_4_title: 'Lista de pasos siguientes',
+        feat_4_desc: 'Gu\u00EDa post-formaci\u00F3n para que no te pierdas',
         state_fee_note: 'La tarifa estatal de $300 se paga directamente al estado (separada de nuestro servicio).',
         addon_dba_title: 'Complemento: DBA (Certificado de Nombre Asumido) \u2014 $99',
         addon_dba_desc: '\u00BFTu negocio opera con un nombre diferente al de tu LLC? Presentamos tu DBA ante el condado y la Secretar\u00EDa de Estado. Tarifa estatal de $25 se paga por separado.',
@@ -80,15 +80,15 @@ const translations = {
         tier_col_feature: 'Incluido',
         tier_col_esencial: 'Esencial',
         tier_col_completo: 'Completo',
-        tier_row_llc: 'LLC Filing (Form 205)',
+        tier_row_llc: 'Certificado de Formaci\u00F3n (Form 205)',
         tier_row_ein: 'Solicitud de EIN',
-        tier_row_checklist: 'Checklist post-formaci\u00F3n',
+        tier_row_checklist: 'Lista post-formaci\u00F3n',
         tier_row_whatsapp: 'Soporte WhatsApp',
         tier_wa_basic: 'Durante la presentaci\u00F3n',
         tier_wa_full: 'Completo + 30 d\u00EDas',
-        tier_row_oa: 'Operating Agreement',
-        tier_row_ra: 'Registered Agent A\u00F1o 1',
-        tier_row_memo: 'Memo de Pr\u00F3ximos Pasos',
+        tier_row_oa: 'Acuerdo Operativo',
+        tier_row_ra: 'Agente Registrado A\u00F1o 1',
+        tier_row_memo: 'Gu\u00EDa de Pr\u00F3ximos Pasos',
         tier_row_price: 'Precio',
 
         // How it works
@@ -128,12 +128,12 @@ const translations = {
         ein_lz: '$70+ extra',
         ein_notario: 'Var\u00EDa',
         ein_diy: 'Debes hacerlo t\u00FA',
-        row_oa: '<strong>Operating Agreement</strong>',
+        row_oa: '<strong>Acuerdo Operativo</strong>',
         oa_nl: 'Plan Completo',
         oa_lz: '$99+ extra',
         oa_notario: 'No usualmente',
         oa_diy: 'Debes redactarlo t\u00FA',
-        row_ra: '<strong>Registered Agent</strong>',
+        row_ra: '<strong>Agente Registrado</strong>',
         ra_nl: 'A\u00F1o 1 incluido (Completo)',
         ra_lz: '$249/a\u00F1o',
         scroll_hint: 'Desliza para ver m\u00E1s',
@@ -149,7 +149,7 @@ const translations = {
         // FAQ
         faq_headline: 'Preguntas Frecuentes',
         faq_1_q: '\u00BFCuánto cuesta formar una LLC?',
-        faq_1_a: 'Ofrecemos dos planes: Esencial ($297) y Completo ($497, incluye Operating Agreement y Registered Agent Año 1). Además, el estado de Texas cobra una tarifa de $300 que se paga directamente al estado.',
+        faq_1_a: 'Ofrecemos dos planes: Esencial ($297) y Completo ($497, incluye Acuerdo Operativo y Agente Registrado A\u00F1o 1). Adem\u00E1s, el estado de Texas cobra una tarifa de $300 que se paga directamente al estado.',
         faq_2_q: '\u00BFCuánto tiempo tarda?',
         faq_2_a: 'Generalmente 5 a 7 días hábiles después de recibir toda tu información.',
         faq_3_q: '\u00BFNecesito un número de seguro social?',
@@ -163,7 +163,7 @@ const translations = {
         faq_7_q: '\u00BFNecesito un abogado?',
         faq_7_a: 'Para la formación básica de una LLC, no. Para situaciones complejas (múltiples socios, propiedad intelectual, etc.), te referimos a un abogado.',
         faq_8_q: '\u00BFQué incluye cada plan?',
-        faq_8_a: 'Ambos planes incluyen: Certificate of Formation (Form 205), solicitud de EIN, y checklist post-formación. El plan Completo agrega: plantilla de Operating Agreement, Registered Agent Año 1, memo de próximos pasos, y soporte WhatsApp extendido por 30 días. Todo en servicio bilingüe.',
+        faq_8_a: 'Ambos planes incluyen: Certificado de Formaci\u00F3n de LLC (Form 205), solicitud de EIN, y lista de pasos post-formaci\u00F3n. El plan Completo agrega: plantilla de Acuerdo Operativo, Agente Registrado A\u00F1o 1, gu\u00EDa de pr\u00F3ximos pasos, y soporte WhatsApp extendido por 30 d\u00EDas. Todo en servicio biling\u00FCe.',
 
         // Final CTA
         final_headline: 'Tu negocio merece ser oficial.',
@@ -171,8 +171,8 @@ const translations = {
         cta_whatsapp_write: 'Escríbenos por WhatsApp',
 
         // Lead Form
-        form_title: 'Solicita Información',
-        form_subtitle: 'Te contactamos en menos de 24 horas.',
+        form_title: '\u00BFPrefieres que te contactemos?',
+        form_subtitle: 'Llena este formulario y te llamamos en 1 d\u00EDa h\u00E1bil. Sin compromiso.',
         form_name_label: 'Nombre',
         form_phone_label: 'Teléfono / WhatsApp',
         form_service_label: 'Servicio de interés',
@@ -218,9 +218,9 @@ const translations = {
         trust_strip_1: 'Bilingual service',
         trust_strip_2: 'Texas-based support',
         trust_strip_3: 'Fast WhatsApp response',
-        testimonial_quote: '\u201CI thought it would be complicated, but they explained everything step by step in Spanish. In less than a week I had my LLC ready.\u201D',
-        testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'avg. business days',
+        hero_stat_price: 'starting \u2014 one-time fee',
+        hero_stat_bilingual: 'bilingual service',
 
         // Problem
         problem_headline: 'We know how frustrating it is\u2026',
@@ -362,8 +362,8 @@ const translations = {
         cta_whatsapp_write: 'Message Us on WhatsApp',
 
         // Lead Form
-        form_title: 'Request Information',
-        form_subtitle: 'We\u2019ll get back to you within 24 hours.',
+        form_title: 'Prefer us to reach out?',
+        form_subtitle: 'Fill out this form and we\u2019ll call you within 1 business day. No obligation.',
         form_name_label: 'Name',
         form_phone_label: 'Phone / WhatsApp',
         form_service_label: 'Service of interest',
@@ -630,19 +630,13 @@ class MicroAnimationController {
             });
         }, this.observerOptions);
 
-        // Add animate-on-scroll class to target elements
+        // Animate only key structural elements — not every element on the page
         const selectors = [
-            '.problem-card',
-            '.step',
             '.tier-card-web',
-            '.faq-item',
-            '.trust-signal',
             '.section-header',
             '.problem-callout',
-            '.timeline-badge',
-            '.tier-comparison-matrix',
             '.comparison-table-wrapper',
-            '.hero-testimonial',
+            '.hero-stats-bar',
         ];
 
         document.querySelectorAll(selectors.join(', ')).forEach((el, index) => {
@@ -836,6 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Track conversion
                     if (window.gtag) {
                         gtag('event', 'lead_form_submit', { service: formData.get('service') });
+                        gtag('event', 'conversion', { send_to: 'AW-17962571856/58DKCPr_mv0bENCwnPVC', value: 50.0, currency: 'USD' });
                     }
                     if (window.fbq) {
                         fbq('track', 'Lead', { content_name: 'lead_form', content_category: formData.get('service') });
@@ -847,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(function () {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Error — intenta de nuevo';
+                submitBtn.textContent = translations[langToggle.currentLang].form_error;
             });
         });
     }
