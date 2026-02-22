@@ -555,6 +555,62 @@
                 </div>
             </div>
 
+            <!-- Tier Comparison Matrix -->
+            <div class="tier-comparison-matrix">
+                <h3 class="tier-compare-heading" data-i18n="tier_compare_heading">Compara los planes</h3>
+                <table class="tier-compare-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="tier_col_feature">Incluido</th>
+                            <th data-i18n="tier_col_esencial">Esencial</th>
+                            <th class="tier-col-rec" data-i18n="tier_col_completo">Completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="tier_row_llc">LLC Filing (Form 205)</td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_ein">Solicitud de EIN</td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_checklist">Checklist post-formaci&oacute;n</td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_whatsapp">Soporte WhatsApp</td>
+                            <td data-i18n="tier_wa_basic">Durante la presentaci&oacute;n</td>
+                            <td data-i18n="tier_wa_full">Completo + 30 d&iacute;as</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_oa">Operating Agreement</td>
+                            <td><i data-lucide="minus" class="table-dash"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_ra">Registered Agent A&ntilde;o 1</td>
+                            <td><i data-lucide="minus" class="table-dash"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="tier_row_memo">Memo de Pr&oacute;ximos Pasos</td>
+                            <td><i data-lucide="minus" class="table-dash"></i></td>
+                            <td><i data-lucide="check" class="table-check"></i></td>
+                        </tr>
+                        <tr class="tier-price-row">
+                            <td data-i18n="tier_row_price">Precio</td>
+                            <td><strong>$297</strong></td>
+                            <td><strong>$497</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- Shared notes below tier cards -->
             <div class="tier-shared-notes">
                 <div class="package-note">
@@ -615,7 +671,7 @@
                         <img src="images/step-delivery.webp" alt="Entrega de documentos de LLC" width="300" height="169" loading="lazy">
                     </div>
                     <h3 data-i18n="step_4_title">Recibe tus documentos</h3>
-                    <p data-i18n="step_4_desc">Certificado de LLC, carta de EIN, plantilla de OA, y gu&iacute;a de pasos siguientes.</p>
+                    <p data-i18n="step_4_desc">Certificado de LLC, carta de EIN, checklist de pasos siguientes, y m&aacute;s seg&uacute;n tu plan.</p>
                 </div>
             </div>
 
@@ -654,8 +710,8 @@
                     <tbody>
                         <tr>
                             <td data-i18n="row_price"><strong>Precio</strong></td>
-                            <td class="highlight" data-i18n="price_nl_table">Desde $297 <span class="price-once">(+ tarifa estatal)</span></td>
-                            <td data-i18n="price_lz_table">$0 + $249+<span class="price-recurring">/a&ntilde;o</span></td>
+                            <td class="highlight" data-i18n="price_nl_table">$297&ndash;$497 <span class="price-once">(pago &uacute;nico + tarifa estatal)</span></td>
+                            <td data-i18n="price_lz_table">$0 + $249+<span class="price-recurring">/a&ntilde;o en cargos</span></td>
                             <td>$1,500+</td>
                             <td data-i18n="row_price_diy">$300 (solo tarifa estatal)</td>
                         </tr>
@@ -691,6 +747,27 @@
                             <td data-i18n="row_whatsapp"><strong>Soporte WhatsApp</strong></td>
                             <td class="highlight"><i data-lucide="check" class="table-check"></i></td>
                             <td><i data-lucide="x" class="table-x"></i></td>
+                            <td><i data-lucide="x" class="table-x"></i></td>
+                            <td><i data-lucide="x" class="table-x"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="row_ein"><strong>EIN Incluido</strong></td>
+                            <td class="highlight"><i data-lucide="check" class="table-check"></i></td>
+                            <td data-i18n="ein_lz">$70+ extra</td>
+                            <td data-i18n="ein_notario">Var&iacute;a</td>
+                            <td data-i18n="ein_diy">Debes hacerlo t&uacute;</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="row_oa"><strong>Operating Agreement</strong></td>
+                            <td class="highlight" data-i18n="oa_nl">Plan Completo</td>
+                            <td data-i18n="oa_lz">$99+ extra</td>
+                            <td data-i18n="oa_notario">No usualmente</td>
+                            <td data-i18n="oa_diy">Debes redactarlo t&uacute;</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="row_ra"><strong>Registered Agent</strong></td>
+                            <td class="highlight" data-i18n="ra_nl">A&ntilde;o 1 incluido (Completo)</td>
+                            <td data-i18n="ra_lz">$249/a&ntilde;o</td>
                             <td><i data-lucide="x" class="table-x"></i></td>
                             <td><i data-lucide="x" class="table-x"></i></td>
                         </tr>

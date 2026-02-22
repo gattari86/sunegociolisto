@@ -21,7 +21,6 @@ const translations = {
         hero_headline: 'Forma tu LLC en Texas, sin complicaciones.',
         hero_subheadline: 'Nosotros hacemos el papeleo. T\u00FA te enfocas en tu negocio.',
         cta_start: 'Empieza Ahora',
-        cta_whatsapp: 'Pregunta en WhatsApp',
         cta_whatsapp_start: 'Empezar por WhatsApp',
         cta_see_price: 'Ver nuestros planes',
         hero_compliance: 'Servicio de preparaci\u00F3n y presentaci\u00F3n de documentos. No asesor\u00EDa legal o fiscal.',
@@ -31,7 +30,6 @@ const translations = {
         testimonial_quote: '\u201CPens\u00E9 que iba a ser complicado, pero me explicaron todo paso a paso en espa\u00F1ol. En menos de una semana ten\u00EDa mi LLC lista.\u201D',
         testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'd\u00EDas h\u00E1biles promedio',
-        hero_trust: 'Servicio bilingüe \u2022 Desde $297 \u2022 Sin cargos ocultos',
 
         // Problem
         problem_headline: 'Sabemos lo frustrante que es\u2026',
@@ -62,8 +60,8 @@ const translations = {
         feat_ra_desc: 'Protege tu dirección personal del registro público. Renovación: $149/año.',
         feat_memo_title: 'Memo de Próximos Pasos',
         feat_memo_desc: 'Guía personalizada post-formación',
-        price_nl_table: 'Desde $297 <span class="price-once">(+ tarifa estatal)</span>',
-        price_lz_table: '$0 + $249+<span class="price-recurring">/año</span>',
+        price_nl_table: '$297\u2013$497 <span class="price-once">(pago \u00FAnico + tarifa estatal)</span>',
+        price_lz_table: '$0 + $249+<span class="price-recurring">/a\u00F1o en cargos</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Presentado ante la Secretaría de Estado de Texas',
         feat_2_title: 'EIN (Número de Identificación Federal)',
@@ -72,13 +70,26 @@ const translations = {
         feat_3_desc: 'Plantilla de autoayuda para miembro único',
         feat_4_title: 'Checklist de pasos siguientes',
         feat_4_desc: 'Guía post-formación para que no te pierdas',
-        feat_5_title: 'Servicio completamente bilingüe',
-        feat_5_desc: 'Inglés + Español en cada paso del proceso',
         state_fee_note: 'La tarifa estatal de $300 se paga directamente al estado (separada de nuestro servicio).',
         addon_dba_title: 'Complemento: DBA (Certificado de Nombre Asumido) \u2014 $99',
         addon_dba_desc: '\u00BFTu negocio opera con un nombre diferente al de tu LLC? Presentamos tu DBA ante el condado y la Secretar\u00EDa de Estado. Tarifa estatal de $25 se paga por separado.',
         package_highlight: 'Precios transparentes. Sin sorpresas. Sin contratos a largo plazo.',
-        cta_form_llc: 'Forma Tu LLC Hoy',
+
+        // Tier Comparison Matrix
+        tier_compare_heading: 'Compara los planes',
+        tier_col_feature: 'Incluido',
+        tier_col_esencial: 'Esencial',
+        tier_col_completo: 'Completo',
+        tier_row_llc: 'LLC Filing (Form 205)',
+        tier_row_ein: 'Solicitud de EIN',
+        tier_row_checklist: 'Checklist post-formaci\u00F3n',
+        tier_row_whatsapp: 'Soporte WhatsApp',
+        tier_wa_basic: 'Durante la presentaci\u00F3n',
+        tier_wa_full: 'Completo + 30 d\u00EDas',
+        tier_row_oa: 'Operating Agreement',
+        tier_row_ra: 'Registered Agent A\u00F1o 1',
+        tier_row_memo: 'Memo de Pr\u00F3ximos Pasos',
+        tier_row_price: 'Precio',
 
         // How it works
         how_headline: 'Cómo Funciona',
@@ -90,7 +101,7 @@ const translations = {
         step_3_title: 'Nosotros presentamos todo',
         step_3_desc: 'Presentamos ante la Secretaría de Estado de TX + solicitamos tu EIN con el IRS.',
         step_4_title: 'Recibe tus documentos',
-        step_4_desc: 'Certificado de LLC, carta de EIN, plantilla de OA, y guía de pasos siguientes.',
+        step_4_desc: 'Certificado de LLC, carta de EIN, checklist de pasos siguientes, y m\u00E1s seg\u00FAn tu plan.',
         timeline_badge: 'Tu LLC lista en 5\u20137 días hábiles',
 
         // Comparison
@@ -113,7 +124,19 @@ const translations = {
         row_hidden: '<strong>Cargos Ocultos</strong>',
         hidden_notario: 'Común',
         row_whatsapp: '<strong>Soporte WhatsApp</strong>',
-        scroll_hint: 'Desliza para ver más',
+        row_ein: '<strong>EIN Incluido</strong>',
+        ein_lz: '$70+ extra',
+        ein_notario: 'Var\u00EDa',
+        ein_diy: 'Debes hacerlo t\u00FA',
+        row_oa: '<strong>Operating Agreement</strong>',
+        oa_nl: 'Plan Completo',
+        oa_lz: '$99+ extra',
+        oa_notario: 'No usualmente',
+        oa_diy: 'Debes redactarlo t\u00FA',
+        row_ra: '<strong>Registered Agent</strong>',
+        ra_nl: 'A\u00F1o 1 incluido (Completo)',
+        ra_lz: '$249/a\u00F1o',
+        scroll_hint: 'Desliza para ver m\u00E1s',
 
         // Trust
         trust_headline: 'Quién Está Detrás de Negocio Listo',
@@ -161,6 +184,7 @@ const translations = {
         form_message_label: 'Mensaje (opcional)',
         form_message_placeholder: 'Algo que quieras que sepamos...',
         form_submit: 'Enviar Solicitud',
+        form_error: 'Error \u2014 intenta de nuevo',
         form_success: 'Recibimos tu solicitud. Te contactaremos pronto por WhatsApp.',
         form_disclaimer: 'No somos abogados. Servicio de preparación de documentos bajo TX Gov Code \u00A7406.017.',
 
@@ -188,7 +212,6 @@ const translations = {
         hero_headline: 'Form Your LLC in Texas, No Complications.',
         hero_subheadline: 'We handle the paperwork. You focus on your business.',
         cta_start: 'Get Started Now',
-        cta_whatsapp: 'Ask on WhatsApp',
         cta_whatsapp_start: 'Start on WhatsApp',
         cta_see_price: 'See Our Plans',
         hero_compliance: 'Document preparation and filing service. Not legal or tax advice.',
@@ -198,7 +221,6 @@ const translations = {
         testimonial_quote: '\u201CI thought it would be complicated, but they explained everything step by step in Spanish. In less than a week I had my LLC ready.\u201D',
         testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'avg. business days',
-        hero_trust: 'Bilingual service \u2022 From $297 \u2022 No hidden fees',
 
         // Problem
         problem_headline: 'We know how frustrating it is\u2026',
@@ -229,8 +251,8 @@ const translations = {
         feat_ra_desc: 'Keeps your home address off the public record. Renewal: $149/year.',
         feat_memo_title: 'Next Steps Memo',
         feat_memo_desc: 'Personalized post-formation guide',
-        price_nl_table: 'From $297 <span class="price-once">(+ state fee)</span>',
-        price_lz_table: '$0 + $249+<span class="price-recurring">/year</span>',
+        price_nl_table: '$297\u2013$497 <span class="price-once">(one-time + state fee)</span>',
+        price_lz_table: '$0 + $249+<span class="price-recurring">/year in fees</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Filed with the Texas Secretary of State',
         feat_2_title: 'EIN (Federal Tax ID Number)',
@@ -239,13 +261,26 @@ const translations = {
         feat_3_desc: 'Self-help packet for single-member LLC',
         feat_4_title: 'Post-formation checklist',
         feat_4_desc: 'Next steps guide so you don\u2019t miss anything',
-        feat_5_title: 'Fully bilingual service',
-        feat_5_desc: 'English + Spanish at every step of the process',
         state_fee_note: 'The $300 state filing fee is paid directly to the state (separate from our service fee).',
         addon_dba_title: 'Add-On: DBA (Assumed Name Certificate) \u2014 $99',
         addon_dba_desc: 'Will your business operate under a different name than your LLC? We file your DBA with the county and TX Secretary of State. $25 state fee paid separately.',
         package_highlight: 'Transparent pricing. No surprises. No long-term contracts.',
-        cta_form_llc: 'Form Your LLC Today',
+
+        // Tier Comparison Matrix
+        tier_compare_heading: 'Compare the plans',
+        tier_col_feature: 'Included',
+        tier_col_esencial: 'Essential',
+        tier_col_completo: 'Complete',
+        tier_row_llc: 'LLC Filing (Form 205)',
+        tier_row_ein: 'EIN Application',
+        tier_row_checklist: 'Post-formation checklist',
+        tier_row_whatsapp: 'WhatsApp Support',
+        tier_wa_basic: 'During filing',
+        tier_wa_full: 'Full + 30 days',
+        tier_row_oa: 'Operating Agreement',
+        tier_row_ra: 'Registered Agent Year 1',
+        tier_row_memo: 'Next Steps Memo',
+        tier_row_price: 'Price',
 
         // How it works
         how_headline: 'How It Works',
@@ -257,7 +292,7 @@ const translations = {
         step_3_title: 'We file everything',
         step_3_desc: 'We file with TX Secretary of State + apply for your EIN with the IRS.',
         step_4_title: 'Receive your documents',
-        step_4_desc: 'LLC certificate, EIN letter, OA template, and next steps guide delivered.',
+        step_4_desc: 'LLC certificate, EIN letter, post-formation checklist, and more depending on your plan.',
         timeline_badge: 'Your LLC ready in 5\u20137 business days',
 
         // Comparison
@@ -280,6 +315,18 @@ const translations = {
         row_hidden: '<strong>Hidden Fees</strong>',
         hidden_notario: 'Common',
         row_whatsapp: '<strong>WhatsApp Support</strong>',
+        row_ein: '<strong>EIN Included</strong>',
+        ein_lz: '$70+ extra',
+        ein_notario: 'Varies',
+        ein_diy: 'Must do yourself',
+        row_oa: '<strong>Operating Agreement</strong>',
+        oa_nl: 'Complete plan',
+        oa_lz: '$99+ extra',
+        oa_notario: 'Not usually',
+        oa_diy: 'Must draft yourself',
+        row_ra: '<strong>Registered Agent</strong>',
+        ra_nl: 'Year 1 included (Complete)',
+        ra_lz: '$249/year',
         scroll_hint: 'Swipe to see more',
 
         // Trust
@@ -328,6 +375,7 @@ const translations = {
         form_message_label: 'Message (optional)',
         form_message_placeholder: 'Anything you want us to know...',
         form_submit: 'Send Request',
+        form_error: 'Error \u2014 please try again',
         form_success: 'We received your request. We\u2019ll contact you soon via WhatsApp.',
         form_disclaimer: 'We are not attorneys. Document preparation service under TX Gov Code \u00A7406.017.',
 
@@ -404,7 +452,7 @@ class LanguageToggle {
         const langData = translations[this.currentLang];
 
         // Keys that contain HTML markup
-        const htmlKeys = new Set(['price_nl_table', 'price_lz_table', 'row_price', 'row_bilingual', 'row_personal', 'row_speed', 'row_hidden', 'row_whatsapp']);
+        const htmlKeys = new Set(['price_nl_table', 'price_lz_table', 'row_price', 'row_bilingual', 'row_personal', 'row_speed', 'row_hidden', 'row_whatsapp', 'row_ein', 'row_oa', 'row_ra']);
 
         elements.forEach((el) => {
             const key = el.getAttribute('data-i18n');
@@ -592,6 +640,7 @@ class MicroAnimationController {
             '.section-header',
             '.problem-callout',
             '.timeline-badge',
+            '.tier-comparison-matrix',
             '.comparison-table-wrapper',
             '.hero-testimonial',
         ];
@@ -755,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize all modules
-    new LanguageToggle();
+    const langToggle = new LanguageToggle();
     new FAQAccordion();
     new HeaderController();
     new MobileMenu();
@@ -793,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Error — intenta de nuevo';
+                    submitBtn.textContent = translations[langToggle.currentLang].form_error;
                 }
             })
             .catch(function () {
