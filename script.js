@@ -23,7 +23,7 @@ const translations = {
         cta_start: 'Empieza Ahora',
         cta_whatsapp: 'Pregunta en WhatsApp',
         cta_whatsapp_start: 'Empezar por WhatsApp',
-        cta_see_price: 'Ver precio fijo',
+        cta_see_price: 'Ver nuestros planes',
         hero_compliance: 'Servicio de preparaci\u00F3n y presentaci\u00F3n de documentos. No asesor\u00EDa legal o fiscal.',
         trust_strip_1: 'Servicio biling\u00FCe',
         trust_strip_2: 'Soporte en Texas',
@@ -31,7 +31,7 @@ const translations = {
         testimonial_quote: '\u201CPens\u00E9 que iba a ser complicado, pero me explicaron todo paso a paso en espa\u00F1ol. En menos de una semana ten\u00EDa mi LLC lista.\u201D',
         testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'd\u00EDas h\u00E1biles promedio',
-        hero_trust: 'Servicio bilingüe \u2022 Precio fijo \u2022 Sin cargos ocultos',
+        hero_trust: 'Servicio bilingüe \u2022 Desde $297 \u2022 Sin cargos ocultos',
 
         // Problem
         problem_headline: 'Sabemos lo frustrante que es\u2026',
@@ -46,9 +46,23 @@ const translations = {
         problem_callout: 'No necesitas un abogado para formar tu LLC. Necesitas a alguien que sepa exactamente cómo hacerlo.',
 
         // Solution
-        solution_headline: 'Todo lo que necesitas para formar tu LLC \u2014 en un solo paquete',
-        price_label: 'Pago único \u2022 Sin sorpresas \u2022 Sin cargos recurrentes',
-        price_nl_table: '$597 <span class="price-once">(pago único)</span>',
+        solution_headline: 'Elige el plan que mejor se ajuste a tu negocio',
+        solution_subtitle: 'Ambos planes incluyen servicio completamente bilingüe y entrega en 5\u20137 días hábiles.',
+        tier_esencial_name: 'Esencial',
+        tier_completo_name: 'Completo',
+        tier_price_label: '+ $300 tarifa estatal',
+        tier_recommended: 'Recomendado',
+        cta_choose_esencial: 'Elegir Esencial',
+        cta_choose_completo: 'Elegir Completo',
+        feat_wa_basic_title: 'Soporte WhatsApp',
+        feat_wa_basic_desc: 'Durante el proceso de presentación',
+        feat_wa_full_title: 'Soporte WhatsApp completo',
+        feat_wa_full_desc: 'Durante el proceso + 30 días post-formación',
+        feat_ra_title: 'Registered Agent \u2014 Año 1 incluido',
+        feat_ra_desc: 'Protege tu dirección personal del registro público. Renovación: $149/año.',
+        feat_memo_title: 'Memo de Próximos Pasos',
+        feat_memo_desc: 'Guía personalizada post-formación',
+        price_nl_table: 'Desde $297 <span class="price-once">(+ tarifa estatal)</span>',
         price_lz_table: '$0 + $249+<span class="price-recurring">/año</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Presentado ante la Secretaría de Estado de Texas',
@@ -63,7 +77,7 @@ const translations = {
         state_fee_note: 'La tarifa estatal de $300 se paga directamente al estado (separada de nuestro servicio).',
         addon_dba_title: 'Complemento: DBA (Certificado de Nombre Asumido) \u2014 $99',
         addon_dba_desc: '\u00BFTu negocio opera con un nombre diferente al de tu LLC? Presentamos tu DBA ante el condado y la Secretar\u00EDa de Estado. Tarifa estatal de $25 se paga por separado.',
-        package_highlight: 'Precio fijo. Sin sorpresas. Sin contratos a largo plazo.',
+        package_highlight: 'Precios transparentes. Sin sorpresas. Sin contratos a largo plazo.',
         cta_form_llc: 'Forma Tu LLC Hoy',
 
         // How it works
@@ -112,7 +126,7 @@ const translations = {
         // FAQ
         faq_headline: 'Preguntas Frecuentes',
         faq_1_q: '\u00BFCuánto cuesta formar una LLC?',
-        faq_1_a: 'Nuestro servicio cuesta $597 (precio fijo). Además, el estado de Texas cobra una tarifa de $300 que se paga directamente al estado. Total: $897.',
+        faq_1_a: 'Ofrecemos dos planes: Esencial ($297) y Completo ($497, incluye Operating Agreement y Registered Agent Año 1). Además, el estado de Texas cobra una tarifa de $300 que se paga directamente al estado.',
         faq_2_q: '\u00BFCuánto tiempo tarda?',
         faq_2_a: 'Generalmente 5 a 7 días hábiles después de recibir toda tu información.',
         faq_3_q: '\u00BFNecesito un número de seguro social?',
@@ -125,13 +139,25 @@ const translations = {
         faq_6_a: 'S\u00ED. La formaci\u00F3n de la LLC no requiere estatus migratorio ni n\u00FAmero de seguro social. Para el EIN, aceptamos ITIN \u2014 lo tramitamos por la v\u00EDa de fax con el IRS, que es el proceso oficial para solicitantes con ITIN. Miles de emprendedores inmigrantes forman LLCs en Texas cada a\u00F1o. Tu situaci\u00F3n migratoria es confidencial y no se comparte con ninguna agencia.',
         faq_7_q: '\u00BFNecesito un abogado?',
         faq_7_a: 'Para la formación básica de una LLC, no. Para situaciones complejas (múltiples socios, propiedad intelectual, etc.), te referimos a un abogado.',
-        faq_8_q: '\u00BFQué incluye el paquete?',
-        faq_8_a: 'Incluye: presentación del Certificate of Formation (Form 205) ante TX SOS, solicitud de EIN ante el IRS, plantilla de Operating Agreement, y guía de pasos siguientes post-formación. Todo en servicio bilingüe.',
+        faq_8_q: '\u00BFQué incluye cada plan?',
+        faq_8_a: 'Ambos planes incluyen: Certificate of Formation (Form 205), solicitud de EIN, y checklist post-formación. El plan Completo agrega: plantilla de Operating Agreement, Registered Agent Año 1, memo de próximos pasos, y soporte WhatsApp extendido por 30 días. Todo en servicio bilingüe.',
 
         // Final CTA
         final_headline: 'Tu negocio merece ser oficial.',
         final_subline: 'Empieza hoy. Recibe tu LLC en días, no semanas.',
         cta_whatsapp_write: 'Escríbenos por WhatsApp',
+
+        // Lead Form
+        form_title: 'Solicita Información',
+        form_subtitle: 'Te contactamos en menos de 24 horas.',
+        form_name_label: 'Nombre',
+        form_phone_label: 'Teléfono / WhatsApp',
+        form_service_label: 'Servicio de interés',
+        form_service_placeholder: 'Selecciona un plan',
+        form_message_label: 'Mensaje (opcional)',
+        form_submit: 'Enviar Solicitud',
+        form_success: 'Recibimos tu solicitud. Te contactaremos pronto por WhatsApp.',
+        form_disclaimer: 'No somos abogados. Servicio de preparación de documentos bajo TX Gov Code \u00A7406.017.',
 
         // Footer
         footer_tagline: 'Formación de LLC en Texas. Rápido, bilingüe, sin complicaciones.',
@@ -159,7 +185,7 @@ const translations = {
         cta_start: 'Get Started Now',
         cta_whatsapp: 'Ask on WhatsApp',
         cta_whatsapp_start: 'Start on WhatsApp',
-        cta_see_price: 'See Fixed Price',
+        cta_see_price: 'See Our Plans',
         hero_compliance: 'Document preparation and filing service. Not legal or tax advice.',
         trust_strip_1: 'Bilingual service',
         trust_strip_2: 'Texas-based support',
@@ -167,7 +193,7 @@ const translations = {
         testimonial_quote: '\u201CI thought it would be complicated, but they explained everything step by step in Spanish. In less than a week I had my LLC ready.\u201D',
         testimonial_author: '\u2014 Mar\u00EDa G., Houston, TX',
         trust_metric_label: 'avg. business days',
-        hero_trust: 'Bilingual service \u2022 Flat rate \u2022 No hidden fees',
+        hero_trust: 'Bilingual service \u2022 From $297 \u2022 No hidden fees',
 
         // Problem
         problem_headline: 'We know how frustrating it is\u2026',
@@ -182,9 +208,23 @@ const translations = {
         problem_callout: 'You don\u2019t need a lawyer to form your LLC. You need someone who knows exactly how to do it.',
 
         // Solution
-        solution_headline: 'Everything you need to form your LLC \u2014 in one package',
-        price_label: 'One-time payment \u2022 No surprises \u2022 No recurring fees',
-        price_nl_table: '$597 <span class="price-once">(one-time)</span>',
+        solution_headline: 'Choose the plan that fits your business',
+        solution_subtitle: 'Both plans include fully bilingual service and delivery in 5\u20137 business days.',
+        tier_esencial_name: 'Essential',
+        tier_completo_name: 'Complete',
+        tier_price_label: '+ $300 state filing fee',
+        tier_recommended: 'Recommended',
+        cta_choose_esencial: 'Choose Essential',
+        cta_choose_completo: 'Choose Complete',
+        feat_wa_basic_title: 'WhatsApp Support',
+        feat_wa_basic_desc: 'During the filing process',
+        feat_wa_full_title: 'Full WhatsApp Support',
+        feat_wa_full_desc: 'During filing + 30 days post-formation',
+        feat_ra_title: 'Registered Agent \u2014 Year 1 included',
+        feat_ra_desc: 'Keeps your home address off the public record. Renewal: $149/year.',
+        feat_memo_title: 'Next Steps Memo',
+        feat_memo_desc: 'Personalized post-formation guide',
+        price_nl_table: 'From $297 <span class="price-once">(+ state fee)</span>',
         price_lz_table: '$0 + $249+<span class="price-recurring">/year</span>',
         feat_1_title: 'LLC Certificate of Formation (Form 205)',
         feat_1_desc: 'Filed with the Texas Secretary of State',
@@ -199,7 +239,7 @@ const translations = {
         state_fee_note: 'The $300 state filing fee is paid directly to the state (separate from our service fee).',
         addon_dba_title: 'Add-On: DBA (Assumed Name Certificate) \u2014 $99',
         addon_dba_desc: 'Will your business operate under a different name than your LLC? We file your DBA with the county and TX Secretary of State. $25 state fee paid separately.',
-        package_highlight: 'Flat rate. No surprises. No long-term contracts.',
+        package_highlight: 'Transparent pricing. No surprises. No long-term contracts.',
         cta_form_llc: 'Form Your LLC Today',
 
         // How it works
@@ -248,7 +288,7 @@ const translations = {
         // FAQ
         faq_headline: 'Frequently Asked Questions',
         faq_1_q: 'How much does it cost to form an LLC?',
-        faq_1_a: 'Our service costs $597 (flat rate). Additionally, Texas charges a $300 filing fee paid directly to the state. Total: $897.',
+        faq_1_a: 'We offer two plans: Essential ($297) and Complete ($497, includes Operating Agreement and Registered Agent Year 1). Additionally, Texas charges a $300 filing fee paid directly to the state.',
         faq_2_q: 'How long does it take?',
         faq_2_a: 'Typically 5 to 7 business days after we receive all your information.',
         faq_3_q: 'Do I need a Social Security number?',
@@ -261,13 +301,25 @@ const translations = {
         faq_6_a: 'Yes. LLC formation does not require immigration status or a Social Security number. For the EIN, we accept ITINs \u2014 we process it through the IRS fax pathway, which is the official process for ITIN applicants. Thousands of immigrant entrepreneurs form LLCs in Texas every year. Your immigration status is confidential and is not shared with any agency.',
         faq_7_q: 'Do I need a lawyer?',
         faq_7_a: 'For basic LLC formation, no. For complex situations (multiple partners, intellectual property, etc.), we refer you to an attorney.',
-        faq_8_q: 'What\u2019s included in the package?',
-        faq_8_a: 'Includes: Certificate of Formation (Form 205) filed with TX SOS, EIN application with the IRS, Operating Agreement template, and post-formation next steps guide. All in bilingual service.',
+        faq_8_q: 'What\u2019s included in each plan?',
+        faq_8_a: 'Both plans include: Certificate of Formation (Form 205), EIN application, and post-formation checklist. The Complete plan adds: Operating Agreement template, Registered Agent Year 1, next steps memo, and 30-day extended WhatsApp support. All in bilingual service.',
 
         // Final CTA
         final_headline: 'Your business deserves to be official.',
         final_subline: 'Start today. Get your LLC in days, not weeks.',
         cta_whatsapp_write: 'Message Us on WhatsApp',
+
+        // Lead Form
+        form_title: 'Request Information',
+        form_subtitle: 'We\u2019ll get back to you within 24 hours.',
+        form_name_label: 'Name',
+        form_phone_label: 'Phone / WhatsApp',
+        form_service_label: 'Service of interest',
+        form_service_placeholder: 'Select a plan',
+        form_message_label: 'Message (optional)',
+        form_submit: 'Send Request',
+        form_success: 'We received your request. We\u2019ll contact you soon via WhatsApp.',
+        form_disclaimer: 'We are not attorneys. Document preparation service under TX Gov Code \u00A7406.017.',
 
         // Footer
         footer_tagline: 'Texas LLC Formation. Fast, bilingual, no hassle.',
@@ -333,8 +385,8 @@ class LanguageToggle {
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
             metaDesc.content = this.currentLang === 'es'
-                ? 'Formación de LLC en Texas — rápido, bilingüe, sin complicaciones. Precio fijo de $597. Negocio Listo te ayuda a formalizar tu negocio.'
-                : 'Texas LLC Formation — fast, bilingual, no hassle. Flat rate $597. Negocio Listo helps you formalize your business.';
+                ? 'Formación de LLC en Texas — rápido, bilingüe, sin complicaciones. Desde $297 + tarifa estatal. Negocio Listo te ayuda a formalizar tu negocio.'
+                : 'Texas LLC Formation — fast, bilingual, no hassle. From $297 + state fee. Negocio Listo helps you formalize your business.';
         }
 
         // Swap all data-i18n elements
@@ -518,7 +570,7 @@ class MicroAnimationController {
         const selectors = [
             '.problem-card',
             '.step',
-            '.package-card',
+            '.tier-card-web',
             '.faq-item',
             '.trust-signal',
             '.section-header',
@@ -695,6 +747,45 @@ document.addEventListener('DOMContentLoaded', () => {
     new CTATracker();
     new SmoothScroller();
     new MobileStickyController();
+
+    // Lead capture form — inline submit, no redirect
+    const leadForm = document.getElementById('nlLeadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(leadForm);
+            const submitBtn = document.getElementById('formSubmitBtn');
+            const successMsg = document.getElementById('formSuccess');
+            submitBtn.disabled = true;
+            submitBtn.textContent = '...';
+
+            fetch(leadForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' },
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    leadForm.style.display = 'none';
+                    if (successMsg) successMsg.style.display = 'flex';
+                    // Track conversion
+                    if (window.gtag) {
+                        gtag('event', 'lead_form_submit', { service: formData.get('service') });
+                    }
+                    if (window.fbq) {
+                        fbq('track', 'Lead', { content_name: 'lead_form', content_category: formData.get('service') });
+                    }
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Error — intenta de nuevo';
+                }
+            })
+            .catch(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Error — intenta de nuevo';
+            });
+        });
+    }
 
     // Comparison table scroll-end detection (hide fade when scrolled to end)
     const compWrapper = document.getElementById('comparisonWrapper');
