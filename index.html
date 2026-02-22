@@ -49,6 +49,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_US">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="Negocio Listo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Negocio Listo — Formaci&oacute;n de LLC en Texas">
     <meta name="twitter:description" content="Servicio biling&uuml;e de formaci&oacute;n de LLC en Texas. Desde $297 + tarifa estatal. Dos planes claros.">
@@ -106,6 +107,7 @@
                 "name": "Negocio Listo",
                 "url": "https://www.sunegociolisto.com",
                 "email": "hola@sunegociolisto.com",
+                "logo": "https://www.sunegociolisto.com/images/logo.png",
                 "parentOrganization": {
                     "@type": "Organization",
                     "name": "Poppy Marketing & Consulting LLC"
@@ -124,12 +126,13 @@
                 "@type": "WebPage",
                 "@id": "https://www.sunegociolisto.com/#webpage",
                 "url": "https://www.sunegociolisto.com",
-                "name": "Negocio Listo — Formaci\u00f3n de LLC en Texas | Servicio Biling\u00fce",
-                "description": "Formaci\u00f3n de LLC en Texas — r\u00e1pido, biling\u00fce, sin complicaciones. Desde $297 + tarifa estatal.",
+                "name": "Negocio Listo \u2014 Formaci\u00f3n de LLC en Texas | Servicio Biling\u00fce",
+                "description": "Formaci\u00f3n de LLC en Texas \u2014 r\u00e1pido, biling\u00fce, sin complicaciones. Desde $297 + tarifa estatal.",
                 "isPartOf": { "@id": "https://www.sunegociolisto.com/#website" },
                 "about": { "@id": "https://www.sunegociolisto.com/#organization" },
                 "inLanguage": "es",
-                "breadcrumb": { "@id": "https://www.sunegociolisto.com/#breadcrumb" }
+                "breadcrumb": { "@id": "https://www.sunegociolisto.com/#breadcrumb" },
+                "mainEntity": { "@id": "https://www.sunegociolisto.com/#faq" }
             },
             {
                 "@type": "BreadcrumbList",
@@ -151,6 +154,11 @@
                 "url": "https://www.sunegociolisto.com",
                 "telephone": "+12812064198",
                 "email": "hola@sunegociolisto.com",
+                "logo": "https://www.sunegociolisto.com/images/logo.png",
+                "image": "https://www.sunegociolisto.com/og-image.png",
+                "sameAs": [
+                    "https://wa.me/message/NWCGJ4MXZO33G1"
+                ],
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Katy",
@@ -163,7 +171,84 @@
                     "name": "Texas"
                 },
                 "priceRange": "$297-$497",
-                "knowsLanguage": ["es", "en"]
+                "knowsLanguage": ["es", "en"],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Planes de Formaci\u00f3n de LLC",
+                    "itemListElement": [
+                        { "@id": "https://www.sunegociolisto.com/#service-esencial" },
+                        { "@id": "https://www.sunegociolisto.com/#service-completo" }
+                    ]
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.sunegociolisto.com/#service-esencial",
+                "name": "Plan Esencial \u2014 Formaci\u00f3n de LLC en Texas",
+                "description": "Certificado de Formaci\u00f3n de LLC (Form 205), solicitud de EIN ante el IRS, y lista de pasos post-formaci\u00f3n. Servicio completamente biling\u00fce con soporte por WhatsApp durante la presentaci\u00f3n.",
+                "provider": { "@id": "https://www.sunegociolisto.com/#organization" },
+                "areaServed": { "@type": "State", "name": "Texas" },
+                "availableLanguage": ["es", "en"],
+                "serviceType": "Document Preparation",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "297",
+                    "priceCurrency": "USD",
+                    "url": "https://www.sunegociolisto.com/#servicios",
+                    "priceValidUntil": "2026-12-31",
+                    "availability": "https://schema.org/InStock"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.sunegociolisto.com/#service-completo",
+                "name": "Plan Completo \u2014 Formaci\u00f3n de LLC en Texas",
+                "description": "Todo lo del Plan Esencial m\u00e1s: plantilla de Acuerdo Operativo, Agente Registrado A\u00f1o 1 incluido, gu\u00eda personalizada de pr\u00f3ximos pasos, y soporte WhatsApp extendido por 30 d\u00edas post-formaci\u00f3n.",
+                "provider": { "@id": "https://www.sunegociolisto.com/#organization" },
+                "areaServed": { "@type": "State", "name": "Texas" },
+                "availableLanguage": ["es", "en"],
+                "serviceType": "Document Preparation",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "497",
+                    "priceCurrency": "USD",
+                    "url": "https://www.sunegociolisto.com/#servicios",
+                    "priceValidUntil": "2026-12-31",
+                    "availability": "https://schema.org/InStock"
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://www.sunegociolisto.com/#howto",
+                "name": "C\u00f3mo formar tu LLC en Texas con Negocio Listo",
+                "description": "4 pasos simples para formalizar tu negocio en Texas con servicio biling\u00fce.",
+                "totalTime": "P7D",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Cont\u00e1ctanos",
+                        "text": "Escr\u00edbenos por WhatsApp o llena el formulario en la p\u00e1gina. Te respondemos en menos de 1 d\u00eda h\u00e1bil."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Llamada de confirmaci\u00f3n",
+                        "text": "Revisamos tu informaci\u00f3n, respondemos preguntas, y recogemos datos sensibles de forma segura."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Nosotros presentamos todo",
+                        "text": "Presentamos ante la Secretar\u00eda de Estado de TX y solicitamos tu EIN con el IRS."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 4,
+                        "name": "Recibe tus documentos",
+                        "text": "Certificado de LLC, carta de EIN, checklist de pasos siguientes, y m\u00e1s seg\u00fan tu plan. Entrega en 5\u20137 d\u00edas h\u00e1biles."
+                    }
+                ]
             },
             {
                 "@type": "FAQPage",

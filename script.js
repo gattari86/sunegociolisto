@@ -439,13 +439,33 @@ class LanguageToggle {
         // Update html lang attribute
         document.documentElement.lang = this.currentLang;
 
+        // Update page title
+        document.title = this.currentLang === 'es'
+            ? 'Negocio Listo \u2014 Formaci\u00f3n de LLC en Texas | Servicio Biling\u00fce'
+            : 'Negocio Listo \u2014 Texas LLC Formation | Bilingual Service';
+
         // Update meta description
+        const descEs = 'Formación de LLC en Texas — rápido, bilingüe, sin complicaciones. Desde $297 + tarifa estatal. Negocio Listo te ayuda a formalizar tu negocio.';
+        const descEn = 'Texas LLC Formation — fast, bilingual, no hassle. From $297 + state fee. Negocio Listo helps you formalize your business.';
+        const titleEs = 'Negocio Listo — Formación de LLC en Texas';
+        const titleEn = 'Negocio Listo — Texas LLC Formation';
+        const desc = this.currentLang === 'es' ? descEs : descEn;
+        const ogTitle = this.currentLang === 'es' ? titleEs : titleEn;
+
         const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.content = this.currentLang === 'es'
-                ? 'Formación de LLC en Texas — rápido, bilingüe, sin complicaciones. Desde $297 + tarifa estatal. Negocio Listo te ayuda a formalizar tu negocio.'
-                : 'Texas LLC Formation — fast, bilingual, no hassle. From $297 + state fee. Negocio Listo helps you formalize your business.';
-        }
+        if (metaDesc) metaDesc.content = desc;
+
+        // Update OG + Twitter meta tags
+        const ogTitleEl = document.querySelector('meta[property="og:title"]');
+        const ogDescEl = document.querySelector('meta[property="og:description"]');
+        const ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+        const twTitleEl = document.querySelector('meta[name="twitter:title"]');
+        const twDescEl = document.querySelector('meta[name="twitter:description"]');
+        if (ogTitleEl) ogTitleEl.content = ogTitle;
+        if (ogDescEl) ogDescEl.content = desc;
+        if (ogLocaleEl) ogLocaleEl.content = this.currentLang === 'es' ? 'es_US' : 'en_US';
+        if (twTitleEl) twTitleEl.content = ogTitle;
+        if (twDescEl) twDescEl.content = desc;
 
         // Swap all data-i18n elements
         const elements = document.querySelectorAll('[data-i18n]');
