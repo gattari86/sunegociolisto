@@ -1097,23 +1097,21 @@ section {
     margin: 0;
 }
 
-.timeline-badge {
+.timeline-note {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-xs);
-    background: var(--color-accent-text);
-    color: var(--color-white);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--radius-xl);
+    gap: 0.35rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    font-size: 0.95rem;
-    max-width: fit-content;
-    margin: 0 auto var(--spacing-lg);
+    color: var(--color-accent-text);
+    margin: var(--spacing-sm) auto 0;
 }
 
-.timeline-badge .icon-sm {
-    color: var(--color-white);
+.timeline-note .icon-sm {
+    color: var(--color-accent-text);
+    width: 16px;
+    height: 16px;
 }
 
 /* ==========================================
