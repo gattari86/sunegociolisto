@@ -154,7 +154,12 @@ const translations = {
         form_phone_label: 'Teléfono / WhatsApp',
         form_service_label: 'Servicio de interés',
         form_service_placeholder: 'Selecciona un plan',
+        form_option_esencial: 'Esencial ($297 + tarifa estatal)',
+        form_option_completo: 'Completo ($497 + tarifa estatal)',
+        form_option_unsure: 'No estoy seguro',
+        form_name_placeholder: 'Tu nombre completo',
         form_message_label: 'Mensaje (opcional)',
+        form_message_placeholder: 'Algo que quieras que sepamos...',
         form_submit: 'Enviar Solicitud',
         form_success: 'Recibimos tu solicitud. Te contactaremos pronto por WhatsApp.',
         form_disclaimer: 'No somos abogados. Servicio de preparación de documentos bajo TX Gov Code \u00A7406.017.',
@@ -316,7 +321,12 @@ const translations = {
         form_phone_label: 'Phone / WhatsApp',
         form_service_label: 'Service of interest',
         form_service_placeholder: 'Select a plan',
+        form_option_esencial: 'Esencial ($297 + state fee)',
+        form_option_completo: 'Completo ($497 + state fee)',
+        form_option_unsure: 'Not sure yet',
+        form_name_placeholder: 'Your full name',
         form_message_label: 'Message (optional)',
+        form_message_placeholder: 'Anything you want us to know...',
         form_submit: 'Send Request',
         form_success: 'We received your request. We\u2019ll contact you soon via WhatsApp.',
         form_disclaimer: 'We are not attorneys. Document preparation service under TX Gov Code \u00A7406.017.',
@@ -405,6 +415,12 @@ class LanguageToggle {
                     el.textContent = langData[key];
                 }
             }
+        });
+
+        // Swap placeholders on inputs/textareas
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (langData[key]) el.placeholder = langData[key];
         });
 
         // Update toggle button display

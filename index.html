@@ -861,7 +861,7 @@
                     <form id="nlLeadForm" action="https://formspree.io/f/mbdapror" method="POST">
                         <div class="form-group">
                             <label for="form-name" data-i18n="form_name_label">Nombre</label>
-                            <input type="text" id="form-name" name="name" required autocomplete="name" placeholder="Tu nombre completo">
+                            <input type="text" id="form-name" name="name" required autocomplete="name" placeholder="Tu nombre completo" data-i18n-placeholder="form_name_placeholder">
                         </div>
                         <div class="form-group">
                             <label for="form-phone" data-i18n="form_phone_label">Tel&eacute;fono / WhatsApp</label>
@@ -871,14 +871,14 @@
                             <label for="form-service" data-i18n="form_service_label">Servicio de inter&eacute;s</label>
                             <select id="form-service" name="service" required>
                                 <option value="" disabled selected data-i18n="form_service_placeholder">Selecciona un plan</option>
-                                <option value="esencial">Esencial ($297 + tarifa estatal)</option>
-                                <option value="completo">Completo ($497 + tarifa estatal)</option>
-                                <option value="no-se">No estoy seguro / Not sure</option>
+                                <option value="esencial" data-i18n="form_option_esencial">Esencial ($297 + tarifa estatal)</option>
+                                <option value="completo" data-i18n="form_option_completo">Completo ($497 + tarifa estatal)</option>
+                                <option value="no-se" data-i18n="form_option_unsure">No estoy seguro / Not sure</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="form-message" data-i18n="form_message_label">Mensaje (opcional)</label>
-                            <textarea id="form-message" name="message" rows="2" placeholder="Algo que quieras que sepamos..."></textarea>
+                            <textarea id="form-message" name="message" rows="2" placeholder="Algo que quieras que sepamos..." data-i18n-placeholder="form_message_placeholder"></textarea>
                         </div>
                         <input type="hidden" name="_subject" value="Nuevo lead desde sunegociolisto.com">
                         <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">
