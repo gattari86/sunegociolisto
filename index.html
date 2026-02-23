@@ -60,8 +60,8 @@
     <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Preload LCP image -->
-    <link rel="preload" href="images/hero.webp" as="image" type="image/webp">
+    <!-- Preload LCP image (responsive — matches img srcset) -->
+    <link rel="preload" as="image" type="image/webp" imagesrcset="images/hero-400w.webp 400w, images/hero-640w.webp 640w, images/hero.webp 800w" imagesizes="(max-width: 767px) 400px, (max-width: 1023px) 640px, 800px">
 
     <!-- Preconnect to CDNs -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -74,30 +74,8 @@
     <!-- Lucide Icons (deferred — non-render-blocking) -->
     <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-    <!-- Critical inline CSS to prevent FOUC while main stylesheet loads async -->
-    <style>
-        @font-face{font-family:'Montserrat';font-style:normal;font-weight:600 800;font-display:optional;src:url(/fonts/montserrat-latin.woff2) format('woff2')}
-        @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:optional;src:url(/fonts/inter-latin.woff2) format('woff2')}
-        :root{--color-primary:#E07A5F;--color-primary-text:#B5553B;--color-secondary:#3D405B;--color-background:#F4F1DE;--color-white:#FFFFFF;--font-display:'Montserrat',sans-serif;--font-body:'Inter',sans-serif}
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-padding-top:80px}
-        body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--color-secondary);background-color:var(--color-background);-webkit-font-smoothing:antialiased}
-        .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-        img{max-width:100%;height:auto;display:block}.hero-image-wrapper img{aspect-ratio:800/449}
-        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #E5E2D6}
-        .header-container{display:flex;align-items:center;justify-content:space-between;height:64px}
-        .logo-text{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--color-primary-text);letter-spacing:0.05em}
-        .hero{padding:calc(64px + 4rem) 0 4rem;background:linear-gradient(180deg,var(--color-background) 0%,var(--color-white) 100%)}
-        .hero-content{text-align:center;max-width:700px;margin:0 auto}
-        .hero-headline{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--color-secondary);line-height:1.15;margin-bottom:1.5rem}
-        .hero-cta{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;min-height:54px}
-        .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-family:var(--font-body);font-size:1rem;font-weight:600;border:none;border-radius:0.75rem;cursor:pointer;white-space:nowrap;text-decoration:none}
-        .hero-grid{display:flex;flex-direction:column;align-items:center;gap:3rem}
-        @media(min-width:768px){.hero-headline{font-size:2.75rem}.hero-cta{flex-direction:row;justify-content:flex-start}.hero-grid{flex-direction:row;gap:3rem}.hero-content{text-align:left;flex:1}}
-    </style>
-
-    <link rel="stylesheet" href="styles.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+    <!-- Stylesheet (synchronous — 8KB Brotli, not worth async CLS tradeoff) -->
+    <link rel="stylesheet" href="styles.min.css">
 
     <!-- Schema.org — Full structured data graph -->
     <script type="application/ld+json">
