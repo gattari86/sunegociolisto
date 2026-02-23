@@ -511,12 +511,6 @@ a:hover { color: var(--color-primary-dark); }
     margin-bottom: var(--spacing-lg);
 }
 
-.hero-trust {
-    font-size: 0.85rem;
-    color: var(--color-dark-gray);
-    font-weight: 500;
-}
-
 /* Hero Compliance Microcopy */
 .hero-compliance {
     font-size: 0.75rem;
@@ -1969,9 +1963,6 @@ td.highlight .price-once {
         justify-content: flex-start;
     }
 
-    .hero-trust {
-        text-align: left;
-    }
 
     /* Trust headshot inline */
     .trust-bio-layout {

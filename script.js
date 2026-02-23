@@ -164,6 +164,10 @@ const translations = {
         faq_7_a: 'Para la formación básica de una LLC, no. Para situaciones complejas (múltiples socios, propiedad intelectual, etc.), te referimos a un abogado.',
         faq_8_q: '\u00BFQué incluye cada plan?',
         faq_8_a: 'Ambos planes incluyen: Certificado de Formaci\u00F3n de LLC (Form 205), solicitud de EIN, y lista de pasos post-formaci\u00F3n. El plan Completo agrega: plantilla de Acuerdo Operativo, Agente Registrado A\u00F1o 1, gu\u00EDa de pr\u00F3ximos pasos, y soporte WhatsApp extendido por 30 d\u00EDas. Todo en servicio biling\u00FCe.',
+        faq_9_q: '\u00BFNecesito un agente registrado?',
+        faq_9_a: 'S\u00ED. Texas requiere que toda LLC tenga un agente registrado con direcci\u00F3n f\u00EDsica en el estado. Su funci\u00F3n es recibir documentos legales y correspondencia oficial del estado en nombre de tu LLC. Puedes ser t\u00FA mismo, pero eso significa que tu direcci\u00F3n personal queda en el registro p\u00FAblico. El plan Completo incluye agente registrado el primer a\u00F1o ($149/a\u00F1o a partir del a\u00F1o 2), protegiendo tu privacidad desde el d\u00EDa uno.',
+        faq_10_q: '\u00BFNecesito un acuerdo operativo?',
+        faq_10_a: 'Texas no lo exige por ley, pero es altamente recomendable. Un acuerdo operativo establece las reglas internas de tu LLC: c\u00F3mo se toman decisiones, c\u00F3mo se distribuyen ganancias, y qu\u00E9 pasa si quieres agregar un socio o cerrar el negocio. Sin uno, los bancos pueden rechazar tu solicitud de cuenta empresarial. El plan Completo incluye una plantilla de acuerdo operativo lista para usar.',
 
         // Final CTA
         final_headline: 'Tu negocio merece ser oficial.',
@@ -175,6 +179,7 @@ const translations = {
         form_subtitle: 'Llena este formulario y te llamamos en 1 d\u00EDa h\u00E1bil. Sin compromiso.',
         form_name_label: 'Nombre',
         form_phone_label: 'Teléfono / WhatsApp',
+        form_phone_placeholder: '(000) 000-0000',
         form_service_label: 'Servicio de interés',
         form_service_placeholder: 'Selecciona un plan',
         form_option_esencial: 'Esencial ($297 + tarifa estatal)',
@@ -197,6 +202,7 @@ const translations = {
         footer_terms: 'Términos de Servicio',
         footer_disclaimer: 'Negocio Listo es un servicio de preparación de documentos operado por Poppy Marketing & Consulting LLC. No somos abogados ni notarios públicos. No proporcionamos asesoría legal.',
         footer_disclaimer_en: 'Negocio Listo is a document preparation service operated by Poppy Marketing & Consulting LLC. We are not attorneys or notaries public. We do not provide legal advice.',
+        footer_copyright: '\u00A9 2026 Negocio Listo, un servicio de Poppy Marketing & Consulting LLC. Katy, TX.',
     },
 
     en: {
@@ -355,6 +361,10 @@ const translations = {
         faq_7_a: 'For basic LLC formation, no. For complex situations (multiple partners, intellectual property, etc.), we refer you to an attorney.',
         faq_8_q: 'What\u2019s included in each plan?',
         faq_8_a: 'Both plans include: Certificate of Formation (Form 205), EIN application, and post-formation checklist. The Complete plan adds: Operating Agreement template, Registered Agent Year 1, next steps memo, and 30-day extended WhatsApp support. All in bilingual service.',
+        faq_9_q: 'Do I need a registered agent?',
+        faq_9_a: 'Yes. Texas requires every LLC to have a registered agent with a physical address in the state. Their role is to receive legal documents and official state correspondence on behalf of your LLC. You can serve as your own, but that means your personal address goes on the public record. The Complete plan includes a registered agent for the first year ($149/year starting year 2), protecting your privacy from day one.',
+        faq_10_q: 'Do I need an operating agreement?',
+        faq_10_a: 'Texas doesn\u2019t require one by law, but it\u2019s highly recommended. An operating agreement establishes your LLC\u2019s internal rules: how decisions are made, how profits are distributed, and what happens if you want to add a partner or close the business. Without one, banks may reject your business account application. The Complete plan includes a ready-to-use operating agreement template.',
 
         // Final CTA
         final_headline: 'Your business deserves to be official.',
@@ -366,6 +376,7 @@ const translations = {
         form_subtitle: 'Fill out this form and we\u2019ll call you within 1 business day. No obligation.',
         form_name_label: 'Name',
         form_phone_label: 'Phone / WhatsApp',
+        form_phone_placeholder: '(000) 000-0000',
         form_service_label: 'Service of interest',
         form_service_placeholder: 'Select a plan',
         form_option_esencial: 'Esencial ($297 + state fee)',
@@ -388,6 +399,7 @@ const translations = {
         footer_terms: 'Terms of Service',
         footer_disclaimer: 'Negocio Listo is a document preparation service operated by Poppy Marketing & Consulting LLC. We are not attorneys or notaries public. We do not provide legal advice.',
         footer_disclaimer_en: 'Negocio Listo is a document preparation service operated by Poppy Marketing & Consulting LLC. We are not attorneys or notaries public. We do not provide legal advice.',
+        footer_copyright: '\u00A9 2026 Negocio Listo, a service of Poppy Marketing & Consulting LLC. Katy, TX.',
     },
 };
 
