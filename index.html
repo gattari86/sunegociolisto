@@ -63,13 +63,8 @@
     <!-- Preload LCP image (responsive — matches img srcset) -->
     <link rel="preload" as="image" type="image/webp" imagesrcset="images/hero-400w.webp 400w, images/hero-640w.webp 640w, images/hero.webp 800w" imagesizes="(max-width: 767px) 400px, (max-width: 1023px) 640px, 800px">
 
-    <!-- Preconnect to CDNs -->
+    <!-- Preconnect to CDN -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
-    <!-- Animate.css (non-render-blocking) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></noscript>
 
     <!-- Lucide Icons (deferred — non-render-blocking) -->
     <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
