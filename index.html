@@ -81,7 +81,7 @@
         html{scroll-padding-top:80px}
         body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--color-secondary);background-color:var(--color-background);-webkit-font-smoothing:antialiased}
         .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-        img{max-width:100%;height:auto;display:block}
+        img{max-width:100%;height:auto;display:block}.hero-image-wrapper img{aspect-ratio:800/449}
         .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #E5E2D6}
         .header-container{display:flex;align-items:center;justify-content:space-between;height:64px}
         .logo-text{font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--color-primary-text);letter-spacing:0.05em}
@@ -94,8 +94,8 @@
         @media(min-width:768px){.hero-headline{font-size:2.75rem}.hero-cta{flex-direction:row;justify-content:flex-start}.hero-grid{flex-direction:row;gap:3rem}.hero-content{text-align:left;flex:1}}
     </style>
 
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link rel="stylesheet" href="styles.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
 
     <!-- Schema.org — Full structured data graph -->
     <script type="application/ld+json">
@@ -453,7 +453,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="images/hero.webp" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="800" height="449" loading="eager" fetchpriority="high" sizes="(max-width: 767px) 360px, (max-width: 1023px) 320px, 400px">
+                    <img src="images/hero.webp" srcset="images/hero-400w.webp 400w, images/hero-640w.webp 640w, images/hero.webp 800w" alt="Emprendedor hispano con documentos de LLC frente a su negocio" width="800" height="449" loading="eager" fetchpriority="high" sizes="(max-width: 767px) 400px, (max-width: 1023px) 640px, 800px">
                 </div>
             </div>
 
@@ -542,7 +542,7 @@
             <div class="problem-callout">
                 <div class="callout-layout">
                     <div class="callout-image">
-                        <img src="images/entrepreneur.webp" alt="Emprendedora hispana con carpeta de documentos" width="120" height="120" loading="lazy">
+                        <img src="images/entrepreneur-130w.webp" alt="Emprendedora hispana con carpeta de documentos" width="120" height="120" loading="lazy">
                     </div>
                     <p data-i18n="problem_callout">No necesitas un abogado para formar tu LLC. Necesitas a alguien que sepa exactamente c&oacute;mo hacerlo.</p>
                 </div>
@@ -1169,6 +1169,6 @@
         </a>
     </div>
 
-    <script defer src="script.js"></script>
+    <script defer src="script.min.js"></script>
 </body>
 </html>
