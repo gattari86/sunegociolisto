@@ -572,6 +572,6 @@ svg.icon-sm { width: 18px; height: 18px; }
 }
 
 @media print {
-    .blog-header, .whatsapp-float, .cta-box { display: none; }
+    .header, .whatsapp-float, .cta-box { display: none; }
     body { color: #000; background: #fff; }
 }
