@@ -15,6 +15,7 @@ const translations = {
         nav_compare: 'Comparación',
         nav_faq: 'Preguntas',
         nav_contact: 'Contacto',
+        nav_blog: 'Blog',
 
         // Hero
         hero_badge: 'Servicio bilingüe de confianza en Texas',
@@ -212,6 +213,7 @@ const translations = {
         nav_compare: 'Compare',
         nav_faq: 'FAQ',
         nav_contact: 'Contact',
+        nav_blog: 'Blog',
 
         // Hero
         hero_badge: 'Trusted bilingual service in Texas',

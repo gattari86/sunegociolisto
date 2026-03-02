@@ -2,6 +2,12 @@
     "rewrites": [
         { "source": "/privacy", "destination": "/privacy.html" },
         { "source": "/terms", "destination": "/terms.html" },
+        { "source": "/blog", "destination": "/blog/index.html" },
+        { "source": "/blog/", "destination": "/blog/index.html" },
+        { "source": "/blog/como-formar-llc-en-texas", "destination": "/blog/como-formar-llc-en-texas.html" },
+        { "source": "/blog/cuanto-cuesta-llc-en-texas", "destination": "/blog/cuanto-cuesta-llc-en-texas.html" },
+        { "source": "/blog/llc-en-espanol-texas", "destination": "/blog/llc-en-espanol-texas.html" },
+        { "source": "/blog/que-es-ein-como-obtenerlo-itin", "destination": "/blog/que-es-ein-como-obtenerlo-itin.html" },
         { "source": "/(.*)", "destination": "/index.html" }
     ],
     "headers": [
