@@ -76,6 +76,8 @@ body {
 a { color: var(--color-primary-text); text-decoration: none; transition: color 150ms ease; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
+.icon-sm { width: 18px; height: 18px; flex-shrink: 0; }
+svg.icon-sm { width: 18px; height: 18px; }
 
 /* Container */
 .container { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
