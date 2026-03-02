@@ -42,11 +42,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" href="/favicon.png">
 
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/blog.css">
 
-    <!-- Schema: Article + HowTo + FAQPage -->
+    <!-- Schema: Article + HowTo + BreadcrumbList + FAQPage -->
     <script type="application/ld+json">
     [{
       "@context": "https://schema.org",
@@ -82,6 +84,15 @@
         {"@type": "Question", "name": "Cuanto cuesta formar una LLC en Texas?", "acceptedAnswer": {"@type": "Answer", "text": "La tarifa estatal es de $300 por presentar el Certificado de Formacion. Adicionalmente, puedes necesitar un agente registrado ($100-$300/ano) y el EIN es gratuito."}},
         {"@type": "Question", "name": "Cuanto tiempo tarda formar una LLC en Texas?", "acceptedAnswer": {"@type": "Answer", "text": "La Secretaria de Estado de Texas procesa la mayoria de las solicitudes en 5 a 7 dias habiles."}},
         {"@type": "Question", "name": "Necesito un abogado para formar una LLC?", "acceptedAnswer": {"@type": "Answer", "text": "Para una formacion basica de LLC, no se requiere un abogado. Un servicio de preparacion de documentos puede manejar el proceso."}}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.sunegociolisto.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.sunegociolisto.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Como Formar una LLC en Texas"}
       ]
     }]
     </script>

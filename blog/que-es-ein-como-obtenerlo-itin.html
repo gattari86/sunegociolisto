@@ -42,11 +42,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" href="/favicon.png">
 
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/blog.css">
 
-    <!-- Schema: Article + FAQPage -->
+    <!-- Schema: Article + BreadcrumbList + FAQPage -->
     <script type="application/ld+json">
     [{
       "@context": "https://schema.org",
@@ -69,6 +71,15 @@
         {"@type": "Question", "name": "Puedo obtener un EIN con ITIN?", "acceptedAnswer": {"@type": "Answer", "text": "Si. El IRS acepta ITIN en la solicitud de EIN. Debes enviar el Form SS-4 por fax y el proceso toma aproximadamente 4 semanas."}},
         {"@type": "Question", "name": "Cuanto tiempo tarda obtener el EIN?", "acceptedAnswer": {"@type": "Answer", "text": "Con SSN, lo recibes inmediatamente al solicitarlo en linea. Con ITIN (via fax), toma aproximadamente 4 semanas."}},
         {"@type": "Question", "name": "Necesito un EIN si soy el unico dueno de mi LLC?", "acceptedAnswer": {"@type": "Answer", "text": "Si. Aunque seas el unico miembro, necesitas un EIN para abrir una cuenta bancaria empresarial, presentar impuestos y operar profesionalmente."}}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.sunegociolisto.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.sunegociolisto.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Que es un EIN y Como Obtenerlo"}
       ]
     }]
     </script>
@@ -201,6 +212,8 @@
 
             <p><strong>Punto clave:</strong> El EIN es para tu negocio. El SSN o ITIN es para ti como persona. Son numeros diferentes con propositos diferentes. Necesitas uno de los dos (SSN o ITIN) para solicitar el EIN de tu LLC.</p>
 
+            <p>Si quieres conocer todos los costos involucrados en formar tu LLC (incluyendo el EIN), consulta nuestra <a href="/blog/cuanto-cuesta-llc-en-texas">guia de costos de una LLC en Texas</a>.</p>
+
             <h2 id="por-que">Por que necesitas un EIN</h2>
 
             <p>Sin un EIN, tu LLC existe legalmente ante el estado, pero no puede operar en la practica. Necesitas tu EIN para:</p>
@@ -270,6 +283,8 @@
                 <li><strong>Configura tu sistema de contabilidad.</strong> Aunque sea una hoja de calculo simple, empieza a registrar ingresos y gastos desde el dia uno.</li>
                 <li><strong>Guarda tu carta de EIN en un lugar seguro.</strong> La necesitaras para multiples tramites. Si la pierdes, puedes llamar al IRS para solicitar una copia, pero es un proceso lento.</li>
             </ol>
+
+            <p>Para ver los 6 pasos completos de formacion de tu LLC en Texas, lee nuestra <a href="/blog/como-formar-llc-en-texas">guia paso a paso</a>.</p>
 
             <h2 id="errores">Errores comunes al solicitar el EIN</h2>
 

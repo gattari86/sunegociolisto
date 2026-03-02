@@ -42,11 +42,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" href="/favicon.png">
 
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/blog.css">
 
-    <!-- Schema: Article + FAQPage -->
+    <!-- Schema: Article + BreadcrumbList + FAQPage -->
     <script type="application/ld+json">
     [{
       "@context": "https://schema.org",
@@ -69,6 +71,15 @@
         {"@type": "Question", "name": "El EIN cuesta dinero?", "acceptedAnswer": {"@type": "Answer", "text": "No. El EIN es completamente gratuito cuando se solicita directamente al IRS. Desconfia de cualquier servicio que te cobre por obtener tu EIN."}},
         {"@type": "Question", "name": "Cuanto cuesta un agente registrado en Texas?", "acceptedAnswer": {"@type": "Answer", "text": "Los servicios de agente registrado cuestan entre $100 y $300 por ano. Puedes ser tu propio agente registrado (gratis), pero tu direccion personal queda en el registro publico."}},
         {"@type": "Question", "name": "Vale la pena pagar un servicio de formacion de LLC?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de tu situacion. Si no hablas ingles fluido, no tienes experiencia con tramites gubernamentales, o simplemente no quieres arriesgarte a cometer errores, un servicio profesional te ahorra tiempo y reduce el riesgo de rechazo."}}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.sunegociolisto.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.sunegociolisto.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Cuanto Cuesta una LLC en Texas en 2026"}
       ]
     }]
     </script>
