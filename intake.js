@@ -10,7 +10,7 @@
   // State
   // ----------------------------------------------------------
   let currentStep = 1;
-  const totalSteps = 7;
+  const totalSteps = 6;
   let currentLang = 'es';
 
   // ----------------------------------------------------------
@@ -22,8 +22,7 @@
       'Tu Negocio',
       'Estructura de tu LLC',
       'Agente Registrado y Oficina',
-      'DBA y Presentacion',
-      'Informacion para tu EIN',
+      'Detalles del Registro',
       'Casi Listo'
     ],
     en: [
@@ -31,8 +30,7 @@
       'Your Business',
       'LLC Structure',
       'Registered Agent & Office',
-      'DBA & Filing',
-      'EIN Information',
+      'Registration Details',
       'Almost Done'
     ]
   };
@@ -42,8 +40,7 @@
     'business_info',
     'llc_structure',
     'registered_agent',
-    'dba_filing',
-    'ein_info',
+    'registration_details',
     'review_submit'
   ];
 
@@ -64,12 +61,10 @@
       step3_subtitle: 'Como se va a manejar tu LLC.',
       step4_title: 'Agente Registrado y Oficina',
       step4_subtitle: 'Informacion sobre tu agente registrado y oficina principal.',
-      step5_title: 'DBA y Presentacion',
-      step5_subtitle: 'Registro adicional y velocidad de tramite.',
-      step6_title: 'Informacion para tu EIN',
-      step6_subtitle: 'Necesitamos estos datos para solicitar tu numero de identificacion fiscal (EIN) con el IRS.',
-      step7_title: 'Casi Listo',
-      step7_subtitle: 'Un par de cosas mas y estamos listos.',
+      step5_title: 'Detalles del Registro',
+      step5_subtitle: 'Informacion adicional para completar tu registro de LLC y solicitud de EIN.',
+      step6_title: 'Casi Listo',
+      step6_subtitle: 'Un par de cosas mas y estamos listos.',
 
       // Step 1 labels
       label_full_name: 'Nombre completo',
@@ -247,12 +242,10 @@
       step3_subtitle: 'How your LLC will be managed.',
       step4_title: 'Registered Agent & Office',
       step4_subtitle: 'Information about your registered agent and principal office.',
-      step5_title: 'DBA & Filing',
-      step5_subtitle: 'Additional registration and filing speed.',
-      step6_title: 'EIN Information',
-      step6_subtitle: 'We need this information to apply for your tax identification number (EIN) with the IRS.',
-      step7_title: 'Almost Done',
-      step7_subtitle: 'A couple more things and we\'re all set.',
+      step5_title: 'Registration Details',
+      step5_subtitle: 'Additional information to complete your LLC registration and EIN application.',
+      step6_title: 'Almost Done',
+      step6_subtitle: 'A couple more things and we\'re all set.',
 
       // Step 1 labels
       label_full_name: 'Full name',
@@ -598,27 +591,17 @@
         break;
 
       case 5:
-        valid = validateRadioGroup('need_dba', 'error_select_option') && valid;
-        var needDba = getRadioValue('need_dba');
-        if (needDba === 'yes') {
-          valid = validateRequired('dba_name', 'error_required') && valid;
-        }
-        valid = validateRadioGroup('filing_speed', 'error_select_option') && valid;
         valid = validateRadioGroup('effective_date_type', 'error_select_option') && valid;
         var effType = getRadioValue('effective_date_type');
         if (effType === 'specific_date') {
           valid = validateRequired('effective_date', 'error_required') && valid;
         }
-        break;
-
-      case 6:
         valid = validateRequired('business_start_date', 'error_required') && valid;
         valid = validateRequired('primary_activity', 'error_required') && valid;
         valid = validateRadioGroup('expect_employees', 'error_select_option') && valid;
-        valid = validateSelect('fiscal_year_end', 'error_select_option') && valid;
         break;
 
-      case 7:
+      case 6:
         var consentBox = document.getElementById('consent');
         if (!consentBox || !consentBox.checked) {
           showError(consentBox, 'error_consent');
@@ -852,20 +835,6 @@
           });
         } else {
           toggleConditional('officeAddressGroup', false);
-        }
-      });
-    });
-
-    // need_dba: show DBA name when yes
-    document.querySelectorAll('input[name="need_dba"]').forEach(function (radio) {
-      radio.addEventListener('change', function () {
-        var val = this.value;
-        if (val === 'yes') {
-          toggleConditional('dbaNameGroup', true);
-          var f = form.querySelector('[name="dba_name"]');
-          if (f) f.setAttribute('required', '');
-        } else {
-          toggleConditional('dbaNameGroup', false);
         }
       });
     });

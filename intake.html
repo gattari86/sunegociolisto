@@ -52,9 +52,8 @@
                     <div class="progress-segment" data-seg="4"></div>
                     <div class="progress-segment" data-seg="5"></div>
                     <div class="progress-segment" data-seg="6"></div>
-                    <div class="progress-segment" data-seg="7"></div>
                 </div>
-                <p class="progress-label" id="progressLabel" data-i18n="progress_label">Paso 1 de 7 -- Tu Informacion Personal</p>
+                <p class="progress-label" id="progressLabel" data-i18n="progress_label">Paso 1 de 6 -- Tu Informacion Personal</p>
             </div>
 
             <!-- Intake Form -->
@@ -376,70 +375,15 @@
                     </div>
                 </div>
 
-                <!-- ========== STEP 5: DBA y Presentacion ========== -->
+                <!-- ========== STEP 5: Detalles del Registro ========== -->
                 <div class="wizard-step" data-step="5">
-                    <h2 class="step-title" data-i18n="step5_title">DBA y Presentacion</h2>
-                    <p class="step-subtitle" data-i18n="step5_subtitle">Registro adicional y velocidad de tramite.</p>
-
-                    <div class="form-group">
-                        <label data-i18n="label_need_dba">DBA (Doing Business As)</label>
-                        <p class="field-hint" data-i18n="hint_dba">Un DBA (Doing Business As) te permite operar bajo un nombre diferente al de tu LLC. Tiene un costo adicional de $99.</p>
-                        <div class="radio-cards">
-                            <label class="radio-card">
-                                <input type="radio" name="need_dba" value="yes" required>
-                                <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="dba_yes_title">Si, necesito un DBA</span>
-                                    <span class="radio-card-desc" data-i18n="dba_yes_desc">Quiero operar bajo un nombre comercial diferente al de mi LLC.</span>
-                                </div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="need_dba" value="no">
-                                <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="dba_no_title">No, no necesito DBA</span>
-                                    <span class="radio-card-desc" data-i18n="dba_no_desc">Voy a operar bajo el nombre de mi LLC.</span>
-                                </div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="need_dba" value="unsure">
-                                <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="dba_unsure_title">No estoy seguro</span>
-                                    <span class="radio-card-desc" data-i18n="dba_unsure_desc">Lo revisamos en la llamada.</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="conditional-group" id="dbaNameGroup">
-                        <div class="form-group">
-                            <label for="dbaName" data-i18n="label_dba_name">Nombre DBA deseado</label>
-                            <input type="text" id="dbaName" name="dba_name" placeholder="Ej: Garcia Lawn Care" data-i18n-placeholder="ph_dba_name">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label data-i18n="label_filing_speed">Velocidad de presentacion</label>
-                        <div class="radio-cards">
-                            <label class="radio-card">
-                                <input type="radio" name="filing_speed" value="standard" required>
-                                <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="speed_standard_title">Estandar (incluido)</span>
-                                    <span class="radio-card-desc" data-i18n="speed_standard_desc">2-3 dias habiles despues de que el estado procese. Sin costo adicional.</span>
-                                </div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="filing_speed" value="expedited">
-                                <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="speed_expedited_title">Expedido (+$25 tarifa estatal)</span>
-                                    <span class="radio-card-desc" data-i18n="speed_expedited_desc">1 dia habil. La tarifa de $25 se paga directamente al estado de Texas.</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
+                    <h2 class="step-title" data-i18n="step5_title">Detalles del Registro</h2>
+                    <p class="step-subtitle" data-i18n="step5_subtitle">Informacion adicional para completar tu registro de LLC y solicitud de EIN.</p>
 
                     <div class="form-group">
                         <label data-i18n="label_effective_date">Fecha efectiva de la LLC</label>
                         <div class="radio-inline-group">
-                            <label class="radio-inline">
+                            <label class="radio-inline selected">
                                 <input type="radio" name="effective_date_type" value="upon_filing" required checked>
                                 <span data-i18n="effective_upon_filing">Al momento de registrar (lo mas comun)</span>
                             </label>
@@ -456,19 +400,6 @@
                             <input type="date" id="effectiveDate" name="effective_date" class="input-short">
                         </div>
                     </div>
-
-                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
-
-                    <div class="step-nav">
-                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
-                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
-                    </div>
-                </div>
-
-                <!-- ========== STEP 6: Informacion para tu EIN ========== -->
-                <div class="wizard-step" data-step="6">
-                    <h2 class="step-title" data-i18n="step6_title">Informacion para tu EIN</h2>
-                    <p class="step-subtitle" data-i18n="step6_subtitle">Necesitamos estos datos para solicitar tu numero de identificacion fiscal (EIN) con el IRS.</p>
 
                     <div class="form-group">
                         <label for="businessStartDate" data-i18n="label_business_start_date">Fecha de inicio del negocio</label>
@@ -500,25 +431,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="fiscalYearEnd" data-i18n="label_fiscal_year_end">Fin del ano fiscal</label>
-                        <select id="fiscalYearEnd" name="fiscal_year_end" required>
-                            <option value="december" selected data-i18n="month_december_rec">Diciembre (recomendado)</option>
-                            <option value="january" data-i18n="month_january">Enero</option>
-                            <option value="february" data-i18n="month_february">Febrero</option>
-                            <option value="march" data-i18n="month_march">Marzo</option>
-                            <option value="april" data-i18n="month_april">Abril</option>
-                            <option value="may" data-i18n="month_may">Mayo</option>
-                            <option value="june" data-i18n="month_june">Junio</option>
-                            <option value="july" data-i18n="month_july">Julio</option>
-                            <option value="august" data-i18n="month_august">Agosto</option>
-                            <option value="september" data-i18n="month_september">Septiembre</option>
-                            <option value="october" data-i18n="month_october">Octubre</option>
-                            <option value="november" data-i18n="month_november">Noviembre</option>
-                        </select>
-                        <p class="field-hint" data-i18n="hint_fiscal_year">Casi todos los negocios pequenos usan diciembre. Si no estas seguro, deja diciembre.</p>
-                    </div>
-
                     <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
 
                     <div class="step-nav">
@@ -527,10 +439,10 @@
                     </div>
                 </div>
 
-                <!-- ========== STEP 7: Casi Listo ========== -->
-                <div class="wizard-step" data-step="7">
-                    <h2 class="step-title" data-i18n="step7_title">Casi Listo</h2>
-                    <p class="step-subtitle" data-i18n="step7_subtitle">Un par de cosas mas y estamos listos.</p>
+                <!-- ========== STEP 6: Casi Listo ========== -->
+                <div class="wizard-step" data-step="6">
+                    <h2 class="step-title" data-i18n="step6_title">Casi Listo</h2>
+                    <p class="step-subtitle" data-i18n="step6_subtitle">Un par de cosas mas y estamos listos.</p>
 
                     <div class="form-group">
                         <label for="referralSource" data-i18n="label_referral_source">Como nos encontraste?</label>

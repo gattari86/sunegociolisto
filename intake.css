@@ -520,7 +520,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 14px 24px;
   background-color: var(--color-whatsapp);
   color: var(--color-white);
   border: none;
@@ -531,6 +531,9 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color var(--transition-fast);
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .btn-whatsapp:hover {
