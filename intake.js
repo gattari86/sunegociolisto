@@ -1,5 +1,5 @@
 /* ============================================================
-   Negocio Listo -- Intake Form Controller (7-step wizard)
+   Negocio Listo -- Intake Form Controller (6-step wizard)
    Handles: navigation, validation, i18n, conditional logic,
    form submission (Formspree), GA4 step tracking.
    ============================================================ */
@@ -50,7 +50,7 @@
   var T = {
     es: {
       // Progress (reference -- label is built dynamically)
-      progress_label: 'Paso 1 de 7 -- Tu Informacion Personal',
+      progress_label: 'Paso 1 de 6 -- Tu Informacion Personal',
 
       // Step titles and subtitles
       step1_title: 'Tu Informacion Personal',
@@ -62,7 +62,7 @@
       step4_title: 'Agente Registrado y Oficina',
       step4_subtitle: 'Informacion sobre tu agente registrado y oficina principal.',
       step5_title: 'Detalles del Registro',
-      step5_subtitle: 'Informacion adicional para completar tu registro de LLC y solicitud de EIN.',
+      step5_subtitle: 'Informacion para completar tu registro y solicitar tu EIN (el numero fiscal de tu negocio).',
       step6_title: 'Casi Listo',
       step6_subtitle: 'Un par de cosas mas y estamos listos.',
 
@@ -97,23 +97,20 @@
       hint_llc_name_2: 'Opcional. En caso de que tu primera opcion no este disponible.',
       label_business_description: 'Descripcion del negocio',
       ph_business_description: 'Ej: Servicio de jardineria y mantenimiento de areas verdes',
-      label_business_desc: 'Descripcion del negocio',
-      ph_business_desc: 'Ej: Servicio de jardineria y mantenimiento de areas verdes',
       hint_business_desc: 'Describe brevemente lo que hace tu negocio. Esto se usa para el registro.',
-      label_num_owners: 'Numero de duenos (miembros)',
-      label_ssn_itin: 'Situacion de SSN / ITIN',
-      hint_ssn_itin: 'Esto es solo para saber como tramitamos tu EIN. Tu numero NO se pide en este formulario -- lo pedimos por telefono de manera segura.',
-      ssn_option: 'Tengo SSN',
-      itin_option: 'Tengo ITIN',
+      label_num_owners: 'Cuantas personas seran duenas de la LLC?',
+      label_ssn_itin: 'Tienes SSN (Social Security) o ITIN (Numero de Identificacion Individual)?',
+      hint_ssn_itin: 'El EIN es el numero de identificacion fiscal de tu negocio -- como un "Social Security" pero para tu LLC. Para tramitarlo necesitamos saber si tienes SSN o ITIN. Tu numero NO se pide en este formulario -- lo pedimos por telefono de manera segura.',
+      ssn_option: 'Tengo SSN (Social Security Number)',
+      itin_option: 'Tengo ITIN (Individual Taxpayer ID)',
       neither_option: 'No tengo ninguno',
       unsure_option: 'No estoy seguro',
-      unsure_ssn: 'No estoy seguro',
 
       // Step 3 labels
       label_management_type: 'Tipo de administracion',
-      mgmt_member_title: 'Manejado por miembros (Member-Managed)',
+      mgmt_member_title: 'Manejado por los duenos',
       mgmt_member_desc: 'Tu, como dueno, tomas las decisiones del dia a dia. La opcion mas comun para negocios pequenos.',
-      mgmt_manager_title: 'Manejado por gerente (Manager-Managed)',
+      mgmt_manager_title: 'Manejado por un gerente',
       mgmt_manager_desc: 'Un gerente designado maneja el negocio. Util si tienes socios que no participan en las operaciones.',
       mgmt_unsure_title: 'No estoy seguro',
       mgmt_unsure_desc: 'No te preocupes -- lo revisamos juntos en la llamada de confirmacion.',
@@ -134,72 +131,34 @@
       label_office_same: 'Tu oficina principal es la misma que tu direccion postal?',
       office_same_yes: 'Si, es la misma',
       office_same_no: 'No, es diferente',
-      office_yes: 'Si, es la misma',
-      office_no: 'No, es diferente',
       label_office_address: 'Direccion de la oficina principal',
 
       // Step 5 labels
-      label_need_dba: 'Necesitas un DBA?',
-      hint_dba: 'Un DBA (Doing Business As) te permite operar bajo un nombre diferente al de tu LLC. Tiene un costo adicional de $99.',
-      dba_yes_title: 'Si, necesito un DBA',
-      dba_yes_desc: 'Quiero operar bajo un nombre comercial diferente al de mi LLC.',
-      dba_no_title: 'No, no necesito DBA',
-      dba_no_desc: 'Voy a operar bajo el nombre de mi LLC.',
-      dba_unsure_title: 'No estoy seguro',
-      dba_unsure_desc: 'Lo revisamos en la llamada.',
-      label_dba_name: 'Nombre DBA deseado',
-      ph_dba_name: 'Ej: Garcia Lawn Care',
-      label_filing_speed: 'Velocidad de presentacion',
-      speed_standard_title: 'Estandar (incluido)',
-      speed_standard_desc: '2-3 dias habiles despues de que el estado procese. Sin costo adicional.',
-      speed_expedited_title: 'Expedido (+$25 tarifa estatal)',
-      speed_expedited_desc: '1 dia habil. La tarifa de $25 se paga directamente al estado de Texas.',
       label_effective_date: 'Fecha efectiva de la LLC',
+      hint_effective_date: 'La fecha efectiva es cuando tu LLC empieza a existir oficialmente. La mayoria elige "al momento de registrar".',
       effective_upon_filing: 'Al momento de registrar (lo mas comun)',
       effective_specific: 'Fecha especifica',
       label_effective_date_pick: 'Fecha efectiva deseada',
 
       // Step 6 labels
-      label_start_date: 'Fecha de inicio del negocio',
       label_business_start_date: 'Fecha de inicio del negocio',
-      hint_start_date: 'Si aun no has empezado, pon la fecha aproximada en que planeas operar.',
       hint_business_start_date: 'Si aun no has empezado, pon la fecha aproximada en que planeas operar.',
       label_primary_activity: 'Actividad principal del negocio',
       ph_primary_activity: 'Ej: Jardineria y mantenimiento',
-      hint_primary_activity: 'Describe en pocas palabras la actividad principal. Esto va en la solicitud del EIN.',
+      hint_primary_activity: 'Describe en pocas palabras lo que hace tu negocio. Ejemplos: limpieza de casas, jardineria, reparacion de autos, venta de comida. Esto va en la solicitud del EIN (el numero fiscal de tu negocio).',
       label_expect_employees: 'Esperas contratar empleados en los proximos 12 meses?',
       employees_yes: 'Si',
       employees_no: 'No',
       employees_unsure: 'No estoy seguro',
-      label_fiscal_year: 'Fin del ano fiscal',
-      label_fiscal_year_end: 'Fin del ano fiscal',
-      hint_fiscal_year: 'Casi todos los negocios pequenos usan diciembre. Si no estas seguro, deja diciembre.',
-      month_december_rec: 'Diciembre (recomendado)',
-      month_january: 'Enero',
-      month_february: 'Febrero',
-      month_march: 'Marzo',
-      month_april: 'Abril',
-      month_may: 'Mayo',
-      month_june: 'Junio',
-      month_july: 'Julio',
-      month_august: 'Agosto',
-      month_september: 'Septiembre',
-      month_october: 'Octubre',
-      month_november: 'Noviembre',
-
-      // Step 7 labels
-      label_referral: 'Como nos encontraste?',
+      // Step 6 labels
       label_referral_source: 'Como nos encontraste?',
-      referral_select: 'Selecciona una opcion',
       referral_placeholder: 'Selecciona una opcion',
       referral_google: 'Google',
       referral_facebook: 'Facebook / Instagram',
       referral_whatsapp: 'WhatsApp',
       referral_friend: 'Recomendacion de un amigo/familiar',
       referral_other: 'Otro',
-      label_notes: 'Notas adicionales',
       label_additional_notes: 'Notas adicionales',
-      ph_notes: 'Algo mas que quieras que sepamos...',
       ph_additional_notes: 'Algo mas que quieras que sepamos...',
       consent_text: 'Entiendo y acepto que Negocio Listo / Poppy Marketing & Consulting LLC no es un bufete de abogados, no ofrece asesoramiento legal, y que los servicios se limitan a la preparacion de documentos conforme al TX Gov Code \u00A7406.017. La informacion proporcionada sera utilizada exclusivamente para preparar mis documentos de formacion de LLC.',
 
@@ -231,7 +190,7 @@
 
     en: {
       // Progress (reference -- label is built dynamically)
-      progress_label: 'Step 1 of 7 -- Your Personal Information',
+      progress_label: 'Step 1 of 6 -- Your Personal Information',
 
       // Step titles and subtitles
       step1_title: 'Your Personal Information',
@@ -243,7 +202,7 @@
       step4_title: 'Registered Agent & Office',
       step4_subtitle: 'Information about your registered agent and principal office.',
       step5_title: 'Registration Details',
-      step5_subtitle: 'Additional information to complete your LLC registration and EIN application.',
+      step5_subtitle: 'Information to complete your registration and apply for your EIN (your business\'s tax ID number).',
       step6_title: 'Almost Done',
       step6_subtitle: 'A couple more things and we\'re all set.',
 
@@ -278,17 +237,14 @@
       hint_llc_name_2: 'Optional. In case your first choice is not available.',
       label_business_description: 'Business description',
       ph_business_description: 'Ex: Landscaping and lawn maintenance services',
-      label_business_desc: 'Business description',
-      ph_business_desc: 'Ex: Landscaping and lawn maintenance services',
       hint_business_desc: 'Briefly describe what your business does. This is used for registration.',
-      label_num_owners: 'Number of owners (members)',
-      label_ssn_itin: 'SSN / ITIN status',
-      hint_ssn_itin: 'This is only to know how we process your EIN. Your number is NOT collected in this form -- we ask for it securely by phone.',
-      ssn_option: 'I have an SSN',
-      itin_option: 'I have an ITIN',
+      label_num_owners: 'How many people will own the LLC?',
+      label_ssn_itin: 'Do you have an SSN (Social Security) or ITIN (Individual Taxpayer ID)?',
+      hint_ssn_itin: 'An EIN is your business\'s tax ID number -- like a Social Security number but for your LLC. To apply for it, we need to know if you have an SSN or ITIN. Your number is NOT collected in this form -- we ask for it securely by phone.',
+      ssn_option: 'I have an SSN (Social Security Number)',
+      itin_option: 'I have an ITIN (Individual Taxpayer ID)',
       neither_option: 'I don\'t have either',
       unsure_option: 'I\'m not sure',
-      unsure_ssn: 'I\'m not sure',
 
       // Step 3 labels
       label_management_type: 'Management type',
@@ -315,72 +271,34 @@
       label_office_same: 'Is your principal office the same as your mailing address?',
       office_same_yes: 'Yes, it\'s the same',
       office_same_no: 'No, it\'s different',
-      office_yes: 'Yes, it\'s the same',
-      office_no: 'No, it\'s different',
       label_office_address: 'Principal office address',
 
       // Step 5 labels
-      label_need_dba: 'Do you need a DBA?',
-      hint_dba: 'A DBA (Doing Business As) allows you to operate under a different name than your LLC. Additional cost: $99.',
-      dba_yes_title: 'Yes, I need a DBA',
-      dba_yes_desc: 'I want to operate under a different business name than my LLC.',
-      dba_no_title: 'No, I don\'t need a DBA',
-      dba_no_desc: 'I will operate under my LLC name.',
-      dba_unsure_title: 'I\'m not sure',
-      dba_unsure_desc: 'We\'ll review it on the call.',
-      label_dba_name: 'Desired DBA name',
-      ph_dba_name: 'Ex: Garcia Lawn Care',
-      label_filing_speed: 'Filing speed',
-      speed_standard_title: 'Standard (included)',
-      speed_standard_desc: '2-3 business days after state processing. No additional cost.',
-      speed_expedited_title: 'Expedited (+$25 state fee)',
-      speed_expedited_desc: '1 business day. The $25 fee is paid directly to the state of Texas.',
       label_effective_date: 'LLC effective date',
+      hint_effective_date: 'The effective date is when your LLC officially starts to exist. Most people choose "upon filing".',
       effective_upon_filing: 'Upon filing (most common)',
       effective_specific: 'Specific date',
       label_effective_date_pick: 'Desired effective date',
 
       // Step 6 labels
-      label_start_date: 'Business start date',
       label_business_start_date: 'Business start date',
-      hint_start_date: 'If you haven\'t started yet, enter the approximate date you plan to operate.',
       hint_business_start_date: 'If you haven\'t started yet, enter the approximate date you plan to operate.',
       label_primary_activity: 'Primary business activity',
       ph_primary_activity: 'Ex: Landscaping and maintenance',
-      hint_primary_activity: 'Briefly describe the main activity. This goes on the EIN application.',
+      hint_primary_activity: 'Briefly describe what your business does. Examples: house cleaning, landscaping, auto repair, food sales. This goes on the EIN application (your business\'s tax ID number).',
       label_expect_employees: 'Do you expect to hire employees in the next 12 months?',
       employees_yes: 'Yes',
       employees_no: 'No',
       employees_unsure: 'I\'m not sure',
-      label_fiscal_year: 'Fiscal year end',
-      label_fiscal_year_end: 'Fiscal year end',
-      hint_fiscal_year: 'Most small businesses use December. If you\'re not sure, leave December.',
-      month_december_rec: 'December (recommended)',
-      month_january: 'January',
-      month_february: 'February',
-      month_march: 'March',
-      month_april: 'April',
-      month_may: 'May',
-      month_june: 'June',
-      month_july: 'July',
-      month_august: 'August',
-      month_september: 'September',
-      month_october: 'October',
-      month_november: 'November',
-
-      // Step 7 labels
-      label_referral: 'How did you find us?',
+      // Step 6 labels
       label_referral_source: 'How did you find us?',
-      referral_select: 'Select an option',
       referral_placeholder: 'Select an option',
       referral_google: 'Google',
       referral_facebook: 'Facebook / Instagram',
       referral_whatsapp: 'WhatsApp',
       referral_friend: 'Friend/family recommendation',
       referral_other: 'Other',
-      label_notes: 'Additional notes',
       label_additional_notes: 'Additional notes',
-      ph_notes: 'Anything else you\'d like us to know...',
       ph_additional_notes: 'Anything else you\'d like us to know...',
       consent_text: 'I understand and agree that Negocio Listo / Poppy Marketing & Consulting LLC is not a law firm, does not provide legal advice, and services are limited to document preparation under TX Gov Code \u00A7406.017. The information provided will be used exclusively to prepare my LLC formation documents.',
 
@@ -858,18 +776,18 @@
   // Radio selection class fallback (for Safari / no :has())
   // ----------------------------------------------------------
   function setupRadioSelection() {
-    document.querySelectorAll('.radio-inline input, .radio-card input').forEach(function (radio) {
+    document.querySelectorAll('.radio-inline input, .radio-card input, .radio-standard input').forEach(function (radio) {
       radio.addEventListener('change', function () {
         var groupName = this.name;
         // Remove selected from all siblings in this group
         document.querySelectorAll('input[name="' + groupName + '"]').forEach(function (r) {
-          var parent = r.closest('.radio-inline, .radio-card');
+          var parent = r.closest('.radio-inline, .radio-card, .radio-standard');
           if (parent) {
             parent.classList.remove('selected');
           }
         });
         // Add selected to current
-        var parent = this.closest('.radio-inline, .radio-card');
+        var parent = this.closest('.radio-inline, .radio-card, .radio-standard');
         if (parent) {
           parent.classList.add('selected');
         }
@@ -881,7 +799,7 @@
   // Form submission
   // ----------------------------------------------------------
   function handleSubmit() {
-    if (!validateStep(7)) {
+    if (!validateStep(6)) {
       scrollToFirstError();
       return;
     }
@@ -989,12 +907,14 @@
       if (btn.dataset.action === 'submit') handleSubmit();
     });
 
-    // Enter key handling -- advance to next step unless in a textarea
+    // Enter key handling -- advance to next step or submit on last step
     form.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         if (currentStep < totalSteps) {
           nextStep();
+        } else {
+          handleSubmit();
         }
       }
     });

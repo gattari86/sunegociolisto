@@ -1,5 +1,5 @@
 /* ==========================================================================
-   intake.css -- Negocio Listo 7-Step Wizard Intake Form
+   intake.css -- Negocio Listo 6-Step Wizard Intake Form
    Loaded AFTER styles.min.css. Uses existing CSS custom properties.
    ========================================================================== */
 
@@ -67,7 +67,7 @@
 
 
 /* --------------------------------------------------------------------------
-   4. Progress Bar (7 segments)
+   4. Progress Bar (6 segments)
    -------------------------------------------------------------------------- */
 
 .progress-bar {
@@ -82,8 +82,8 @@
 
 .progress-segment {
   flex: 1;
-  height: 6px;
-  border-radius: 3px;
+  height: 10px;
+  border-radius: 5px;
   background-color: var(--color-medium-gray);
   transition: background-color var(--transition-base);
 }
@@ -210,7 +210,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 10px 16px;
+  min-height: 44px;
   border: 2px solid var(--color-medium-gray);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -534,6 +535,7 @@
   max-width: 100%;
   text-align: center;
   word-wrap: break-word;
+  white-space: normal;
 }
 
 .btn-whatsapp:hover {
@@ -660,7 +662,8 @@
   }
 
   .radio-inline {
-    padding: 8px 12px;
+    padding: 10px 12px;
+    min-height: 44px;
     font-size: 0.85rem;
   }
 

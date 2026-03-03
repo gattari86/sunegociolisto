@@ -172,7 +172,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label data-i18n="label_num_owners">Numero de duenos (miembros)</label>
+                        <label data-i18n="label_num_owners">Cuantas personas seran duenas de la LLC?</label>
                         <div class="radio-inline-group">
                             <label class="radio-inline">
                                 <input type="radio" name="num_owners" value="1" required>
@@ -194,16 +194,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label data-i18n="label_ssn_itin">SSN / ITIN</label>
-                        <p class="field-hint" data-i18n="hint_ssn_itin">Esto es solo para saber como tramitamos tu EIN. Tu numero NO se pide en este formulario -- lo pedimos por telefono de manera segura.</p>
+                        <label data-i18n="label_ssn_itin">Tienes SSN (Social Security) o ITIN (Numero de Identificacion Individual)?</label>
+                        <p class="field-hint" data-i18n="hint_ssn_itin">El EIN es el numero de identificacion fiscal de tu negocio -- como un "Social Security" pero para tu LLC. Para tramitarlo necesitamos saber si tienes SSN o ITIN. Tu numero NO se pide en este formulario -- lo pedimos por telefono de manera segura.</p>
                         <div class="radio-group">
                             <label class="radio-standard">
                                 <input type="radio" name="ssn_itin_status" value="ssn" required>
-                                <span data-i18n="ssn_option">Tengo SSN</span>
+                                <span data-i18n="ssn_option">Tengo SSN (Social Security Number)</span>
                             </label>
                             <label class="radio-standard">
                                 <input type="radio" name="ssn_itin_status" value="itin">
-                                <span data-i18n="itin_option">Tengo ITIN</span>
+                                <span data-i18n="itin_option">Tengo ITIN (Individual Taxpayer ID)</span>
                             </label>
                             <label class="radio-standard">
                                 <input type="radio" name="ssn_itin_status" value="neither">
@@ -235,14 +235,14 @@
                             <label class="radio-card">
                                 <input type="radio" name="management_type" value="member" required>
                                 <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="mgmt_member_title">Manejado por miembros (Member-Managed)</span>
+                                    <span class="radio-card-title" data-i18n="mgmt_member_title">Manejado por los duenos</span>
                                     <span class="radio-card-desc" data-i18n="mgmt_member_desc">Tu, como dueno, tomas las decisiones del dia a dia. La opcion mas comun para negocios pequenos.</span>
                                 </div>
                             </label>
                             <label class="radio-card">
                                 <input type="radio" name="management_type" value="manager">
                                 <div class="radio-card-content">
-                                    <span class="radio-card-title" data-i18n="mgmt_manager_title">Manejado por gerente (Manager-Managed)</span>
+                                    <span class="radio-card-title" data-i18n="mgmt_manager_title">Manejado por un gerente</span>
                                     <span class="radio-card-desc" data-i18n="mgmt_manager_desc">Un gerente designado maneja el negocio. Util si tienes socios que no participan en las operaciones.</span>
                                 </div>
                             </label>
@@ -378,10 +378,11 @@
                 <!-- ========== STEP 5: Detalles del Registro ========== -->
                 <div class="wizard-step" data-step="5">
                     <h2 class="step-title" data-i18n="step5_title">Detalles del Registro</h2>
-                    <p class="step-subtitle" data-i18n="step5_subtitle">Informacion adicional para completar tu registro de LLC y solicitud de EIN.</p>
+                    <p class="step-subtitle" data-i18n="step5_subtitle">Informacion para completar tu registro y solicitar tu EIN (el numero fiscal de tu negocio).</p>
 
                     <div class="form-group">
                         <label data-i18n="label_effective_date">Fecha efectiva de la LLC</label>
+                        <p class="field-hint" data-i18n="hint_effective_date">La fecha efectiva es cuando tu LLC empieza a existir oficialmente. La mayoria elige "al momento de registrar".</p>
                         <div class="radio-inline-group">
                             <label class="radio-inline selected">
                                 <input type="radio" name="effective_date_type" value="upon_filing" required checked>
@@ -410,7 +411,7 @@
                     <div class="form-group">
                         <label for="primaryActivity" data-i18n="label_primary_activity">Actividad principal del negocio</label>
                         <input type="text" id="primaryActivity" name="primary_activity" required placeholder="Ej: Jardineria y mantenimiento" data-i18n-placeholder="ph_primary_activity">
-                        <p class="field-hint" data-i18n="hint_primary_activity">Describe en pocas palabras la actividad principal. Esto va en la solicitud del EIN.</p>
+                        <p class="field-hint" data-i18n="hint_primary_activity">Describe en pocas palabras lo que hace tu negocio. Ejemplos: limpieza de casas, jardineria, reparacion de autos, venta de comida. Esto va en la solicitud del EIN (el numero fiscal de tu negocio).</p>
                     </div>
 
                     <div class="form-group">
