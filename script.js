@@ -867,6 +867,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         gtag('event', 'conversion', { send_to: 'AW-17962571856/58DKCPr_mv0bENCwnPVC', value: 50.0, currency: 'USD' });
                     }
                     if (window.fbq) {
+                        var ph = (formData.get('phone') || '').replace(/\D/g, '');
+                        if (ph.length === 10) ph = '1' + ph;
+                        var fn = (formData.get('name') || '').trim().toLowerCase().split(' ')[0];
+                        var ln = (formData.get('name') || '').trim().toLowerCase().split(' ').slice(1).join(' ');
+                        var matchData = {};
+                        if (ph) matchData.ph = ph;
+                        if (fn) matchData.fn = fn;
+                        if (ln) matchData.ln = ln;
+                        fbq('init', '4319991371651967', matchData);
                         fbq('track', 'Lead', { content_name: 'lead_form', content_category: formData.get('service') });
                     }
                 } else {
