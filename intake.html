@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google tag (gtag.js) - GA4 ONLY -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRQN5S9XG2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SRQN5S9XG2');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Formulario de Inicio | Negocio Listo</title>
+
+    <!-- Preload critical fonts (self-hosted) -->
+    <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="intake.css">
+</head>
+<body class="intake-page">
+
+    <header class="intake-header">
+        <div class="intake-header-content">
+            <a href="/" class="intake-logo-link">
+                <img src="images/logo.png" alt="Negocio Listo" class="intake-logo">
+            </a>
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                <span class="lang-active">ES</span> / <span class="lang-inactive">EN</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="intake-main">
+        <div class="intake-card">
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-segments">
+                    <div class="progress-segment active" data-seg="1"></div>
+                    <div class="progress-segment" data-seg="2"></div>
+                    <div class="progress-segment" data-seg="3"></div>
+                    <div class="progress-segment" data-seg="4"></div>
+                    <div class="progress-segment" data-seg="5"></div>
+                    <div class="progress-segment" data-seg="6"></div>
+                    <div class="progress-segment" data-seg="7"></div>
+                </div>
+                <p class="progress-label" id="progressLabel" data-i18n="progress_label">Paso 1 de 7 -- Tu Informacion Personal</p>
+            </div>
+
+            <!-- Intake Form -->
+            <form id="intakeForm" action="https://formspree.io/f/xjgeqapb" method="POST" novalidate>
+
+                <!-- Hidden Fields -->
+                <input type="hidden" name="_subject" id="hiddenSubject" value="">
+                <input type="hidden" name="_replyto" id="hiddenReplyTo" value="">
+                <input type="hidden" name="form_type" value="intake">
+                <input type="hidden" name="submission_lang" id="hiddenLang" value="es">
+                <input type="hidden" name="submitted_at" id="hiddenTimestamp" value="">
+
+                <!-- ========== STEP 1: Tu Informacion Personal ========== -->
+                <div class="wizard-step active" data-step="1">
+                    <h2 class="step-title" data-i18n="step1_title">Tu Informacion Personal</h2>
+                    <p class="step-subtitle" data-i18n="step1_subtitle">Empecemos con tus datos de contacto.</p>
+
+                    <div class="form-group">
+                        <label for="fullName" data-i18n="label_full_name">Nombre completo</label>
+                        <input type="text" id="fullName" name="full_name" required autocomplete="name" placeholder="Ej: Maria Garcia Lopez" data-i18n-placeholder="ph_full_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-i18n="label_email">Correo electronico</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@correo.com" data-i18n-placeholder="ph_email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-i18n="label_phone">Telefono</label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="(000) 000-0000" data-i18n-placeholder="ph_phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_preferred_contact">Metodo de contacto preferido</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="preferred_contact" value="whatsapp" required>
+                                <span>WhatsApp</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="preferred_contact" value="llamada">
+                                <span data-i18n="contact_call">Llamada</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="preferred_contact" value="texto">
+                                <span data-i18n="contact_text">Texto</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_preferred_language">Idioma preferido</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="preferred_language" value="espanol" required>
+                                <span data-i18n="lang_spanish">Espanol</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="preferred_language" value="ingles">
+                                <span data-i18n="lang_english">Ingles</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <fieldset class="address-fieldset">
+                        <legend data-i18n="label_mailing_address">Direccion postal</legend>
+                        <div class="form-group">
+                            <label for="mailingStreet" data-i18n="label_street">Calle</label>
+                            <input type="text" id="mailingStreet" name="mailing_street" required autocomplete="street-address" placeholder="123 Main St, Apt 4" data-i18n-placeholder="ph_street">
+                        </div>
+                        <div class="form-group">
+                            <label for="mailingCity" data-i18n="label_city">Ciudad</label>
+                            <input type="text" id="mailingCity" name="mailing_city" required autocomplete="address-level2" placeholder="Houston" data-i18n-placeholder="ph_city">
+                        </div>
+                        <div class="field-row">
+                            <div class="form-group">
+                                <label for="mailingState" data-i18n="label_state">Estado</label>
+                                <input type="text" id="mailingState" name="mailing_state" required maxlength="2" value="TX" class="input-short" style="text-transform:uppercase" autocomplete="address-level1">
+                            </div>
+                            <div class="form-group">
+                                <label for="mailingZip" data-i18n="label_zip">Codigo postal</label>
+                                <input type="text" id="mailingZip" name="mailing_zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="77493" data-i18n-placeholder="ph_zip" autocomplete="postal-code">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <div></div>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 2: Tu Negocio ========== -->
+                <div class="wizard-step" data-step="2">
+                    <h2 class="step-title" data-i18n="step2_title">Tu Negocio</h2>
+                    <p class="step-subtitle" data-i18n="step2_subtitle">Cuentanos sobre el negocio que quieres formar.</p>
+
+                    <div class="form-group">
+                        <label for="llcName1" data-i18n="label_llc_name_1">Nombre deseado para tu LLC</label>
+                        <input type="text" id="llcName1" name="llc_name_1" required placeholder="Ej: Garcia Landscaping LLC" data-i18n-placeholder="ph_llc_name_1">
+                        <p class="field-hint" data-i18n="hint_llc_name">El nombre de tu LLC debe terminar en "LLC". Verificaremos disponibilidad con el estado.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="llcName2" data-i18n="label_llc_name_2">Segunda opcion de nombre (opcional)</label>
+                        <input type="text" id="llcName2" name="llc_name_2" placeholder="Ej: Garcia Services LLC" data-i18n-placeholder="ph_llc_name_2">
+                        <p class="field-hint" data-i18n="hint_llc_name_2">Opcional. En caso de que tu primera opcion no este disponible.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessDescription" data-i18n="label_business_description">Descripcion del negocio</label>
+                        <textarea id="businessDescription" name="business_description" rows="3" required placeholder="Ej: Servicio de jardineria y mantenimiento de areas verdes" data-i18n-placeholder="ph_business_description"></textarea>
+                        <p class="field-hint" data-i18n="hint_business_desc">Describe brevemente lo que hace tu negocio. Esto se usa para el registro.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_num_owners">Numero de duenos (miembros)</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="num_owners" value="1" required>
+                                <span>1</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="num_owners" value="2">
+                                <span>2</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="num_owners" value="3">
+                                <span>3</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="num_owners" value="4+">
+                                <span>4+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_ssn_itin">SSN / ITIN</label>
+                        <p class="field-hint" data-i18n="hint_ssn_itin">Esto es solo para saber como tramitamos tu EIN. Tu numero NO se pide en este formulario -- lo pedimos por telefono de manera segura.</p>
+                        <div class="radio-group">
+                            <label class="radio-standard">
+                                <input type="radio" name="ssn_itin_status" value="ssn" required>
+                                <span data-i18n="ssn_option">Tengo SSN</span>
+                            </label>
+                            <label class="radio-standard">
+                                <input type="radio" name="ssn_itin_status" value="itin">
+                                <span data-i18n="itin_option">Tengo ITIN</span>
+                            </label>
+                            <label class="radio-standard">
+                                <input type="radio" name="ssn_itin_status" value="neither">
+                                <span data-i18n="neither_option">No tengo ninguno</span>
+                            </label>
+                            <label class="radio-standard">
+                                <input type="radio" name="ssn_itin_status" value="unsure">
+                                <span data-i18n="unsure_option">No estoy seguro</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 3: Estructura de tu LLC ========== -->
+                <div class="wizard-step" data-step="3">
+                    <h2 class="step-title" data-i18n="step3_title">Estructura de tu LLC</h2>
+                    <p class="step-subtitle" data-i18n="step3_subtitle">Como se va a manejar tu LLC.</p>
+
+                    <div class="form-group">
+                        <label data-i18n="label_management_type">Tipo de administracion</label>
+                        <div class="radio-cards">
+                            <label class="radio-card">
+                                <input type="radio" name="management_type" value="member" required>
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="mgmt_member_title">Manejado por miembros (Member-Managed)</span>
+                                    <span class="radio-card-desc" data-i18n="mgmt_member_desc">Tu, como dueno, tomas las decisiones del dia a dia. La opcion mas comun para negocios pequenos.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="management_type" value="manager">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="mgmt_manager_title">Manejado por gerente (Manager-Managed)</span>
+                                    <span class="radio-card-desc" data-i18n="mgmt_manager_desc">Un gerente designado maneja el negocio. Util si tienes socios que no participan en las operaciones.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="management_type" value="unsure">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="mgmt_unsure_title">No estoy seguro</span>
+                                    <span class="radio-card-desc" data-i18n="mgmt_unsure_desc">No te preocupes -- lo revisamos juntos en la llamada de confirmacion.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="conditional-group" id="additionalOwnersGroup">
+                        <div class="form-group">
+                            <label for="additionalOwners" data-i18n="label_additional_owners">Nombres de los otros duenos</label>
+                            <textarea id="additionalOwners" name="additional_owners" rows="3" placeholder="Nombre completo de cada dueno adicional, uno por linea" data-i18n-placeholder="ph_additional_owners"></textarea>
+                            <p class="field-hint" data-i18n="hint_additional_owners">Escribe el nombre completo de cada dueno adicional, uno por linea.</p>
+                        </div>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 4: Agente Registrado y Oficina ========== -->
+                <div class="wizard-step" data-step="4">
+                    <h2 class="step-title" data-i18n="step4_title">Agente Registrado y Oficina</h2>
+                    <p class="step-subtitle" data-i18n="step4_subtitle">Informacion sobre tu agente registrado y oficina principal.</p>
+
+                    <div class="form-group">
+                        <label data-i18n="label_ra_preference">Agente registrado</label>
+                        <p class="field-hint" data-i18n="hint_ra">Un agente registrado recibe documentos legales por ti. Si usas el nuestro, tu direccion personal no aparece en el registro publico.</p>
+                        <div class="radio-cards">
+                            <label class="radio-card">
+                                <input type="radio" name="ra_preference" value="nl_provides" required>
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="ra_nl_title">Negocio Listo lo proporciona</span>
+                                    <span class="radio-card-desc" data-i18n="ra_nl_desc">Nosotros actuamos como tu agente registrado. Incluido el primer ano en el plan Completo, o $149/ano.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="ra_preference" value="self">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="ra_self_title">Yo mismo / mi direccion</span>
+                                    <span class="radio-card-desc" data-i18n="ra_self_desc">Tu actuas como tu propio agente registrado usando tu direccion personal.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="ra_preference" value="unsure">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="ra_unsure_title">No estoy seguro</span>
+                                    <span class="radio-card-desc" data-i18n="ra_unsure_desc">No te preocupes -- te ayudamos a decidir en la llamada.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="conditional-group" id="raAddressGroup">
+                        <fieldset class="address-fieldset">
+                            <legend data-i18n="label_ra_address">Direccion del agente registrado</legend>
+                            <div class="form-group">
+                                <label for="raStreet" data-i18n="label_street">Calle</label>
+                                <input type="text" id="raStreet" name="ra_street" autocomplete="street-address" placeholder="123 Main St, Apt 4" data-i18n-placeholder="ph_street">
+                            </div>
+                            <div class="form-group">
+                                <label for="raCity" data-i18n="label_city">Ciudad</label>
+                                <input type="text" id="raCity" name="ra_city" autocomplete="address-level2" placeholder="Houston" data-i18n-placeholder="ph_city">
+                            </div>
+                            <div class="field-row">
+                                <div class="form-group">
+                                    <label for="raState" data-i18n="label_state">Estado</label>
+                                    <input type="text" id="raState" name="ra_state" maxlength="2" value="TX" class="input-short" style="text-transform:uppercase" autocomplete="address-level1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="raZip" data-i18n="label_zip">Codigo postal</label>
+                                    <input type="text" id="raZip" name="ra_zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="77493" data-i18n-placeholder="ph_zip" autocomplete="postal-code">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_office_same">Tu oficina principal es la misma que tu direccion postal?</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="office_same_as_mailing" value="yes" required>
+                                <span data-i18n="office_same_yes">Si, es la misma</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="office_same_as_mailing" value="no">
+                                <span data-i18n="office_same_no">No, es diferente</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="conditional-group" id="officeAddressGroup">
+                        <fieldset class="address-fieldset">
+                            <legend data-i18n="label_office_address">Direccion de la oficina principal</legend>
+                            <div class="form-group">
+                                <label for="officeStreet" data-i18n="label_street">Calle</label>
+                                <input type="text" id="officeStreet" name="office_street" autocomplete="street-address" placeholder="123 Main St, Apt 4" data-i18n-placeholder="ph_street">
+                            </div>
+                            <div class="form-group">
+                                <label for="officeCity" data-i18n="label_city">Ciudad</label>
+                                <input type="text" id="officeCity" name="office_city" autocomplete="address-level2" placeholder="Houston" data-i18n-placeholder="ph_city">
+                            </div>
+                            <div class="field-row">
+                                <div class="form-group">
+                                    <label for="officeState" data-i18n="label_state">Estado</label>
+                                    <input type="text" id="officeState" name="office_state" maxlength="2" value="TX" class="input-short" style="text-transform:uppercase" autocomplete="address-level1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="officeZip" data-i18n="label_zip">Codigo postal</label>
+                                    <input type="text" id="officeZip" name="office_zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="77493" data-i18n-placeholder="ph_zip" autocomplete="postal-code">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 5: DBA y Presentacion ========== -->
+                <div class="wizard-step" data-step="5">
+                    <h2 class="step-title" data-i18n="step5_title">DBA y Presentacion</h2>
+                    <p class="step-subtitle" data-i18n="step5_subtitle">Registro adicional y velocidad de tramite.</p>
+
+                    <div class="form-group">
+                        <label data-i18n="label_need_dba">DBA (Doing Business As)</label>
+                        <p class="field-hint" data-i18n="hint_dba">Un DBA (Doing Business As) te permite operar bajo un nombre diferente al de tu LLC. Tiene un costo adicional de $99.</p>
+                        <div class="radio-cards">
+                            <label class="radio-card">
+                                <input type="radio" name="need_dba" value="yes" required>
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="dba_yes_title">Si, necesito un DBA</span>
+                                    <span class="radio-card-desc" data-i18n="dba_yes_desc">Quiero operar bajo un nombre comercial diferente al de mi LLC.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="need_dba" value="no">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="dba_no_title">No, no necesito DBA</span>
+                                    <span class="radio-card-desc" data-i18n="dba_no_desc">Voy a operar bajo el nombre de mi LLC.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="need_dba" value="unsure">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="dba_unsure_title">No estoy seguro</span>
+                                    <span class="radio-card-desc" data-i18n="dba_unsure_desc">Lo revisamos en la llamada.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="conditional-group" id="dbaNameGroup">
+                        <div class="form-group">
+                            <label for="dbaName" data-i18n="label_dba_name">Nombre DBA deseado</label>
+                            <input type="text" id="dbaName" name="dba_name" placeholder="Ej: Garcia Lawn Care" data-i18n-placeholder="ph_dba_name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_filing_speed">Velocidad de presentacion</label>
+                        <div class="radio-cards">
+                            <label class="radio-card">
+                                <input type="radio" name="filing_speed" value="standard" required>
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="speed_standard_title">Estandar (incluido)</span>
+                                    <span class="radio-card-desc" data-i18n="speed_standard_desc">2-3 dias habiles despues de que el estado procese. Sin costo adicional.</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="filing_speed" value="expedited">
+                                <div class="radio-card-content">
+                                    <span class="radio-card-title" data-i18n="speed_expedited_title">Expedido (+$25 tarifa estatal)</span>
+                                    <span class="radio-card-desc" data-i18n="speed_expedited_desc">1 dia habil. La tarifa de $25 se paga directamente al estado de Texas.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_effective_date">Fecha efectiva de la LLC</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="effective_date_type" value="upon_filing" required checked>
+                                <span data-i18n="effective_upon_filing">Al momento de registrar (lo mas comun)</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="effective_date_type" value="specific_date">
+                                <span data-i18n="effective_specific">Fecha especifica</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="conditional-group" id="effectiveDateGroup">
+                        <div class="form-group">
+                            <label for="effectiveDate" data-i18n="label_effective_date_pick">Fecha efectiva deseada</label>
+                            <input type="date" id="effectiveDate" name="effective_date" class="input-short">
+                        </div>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 6: Informacion para tu EIN ========== -->
+                <div class="wizard-step" data-step="6">
+                    <h2 class="step-title" data-i18n="step6_title">Informacion para tu EIN</h2>
+                    <p class="step-subtitle" data-i18n="step6_subtitle">Necesitamos estos datos para solicitar tu numero de identificacion fiscal (EIN) con el IRS.</p>
+
+                    <div class="form-group">
+                        <label for="businessStartDate" data-i18n="label_business_start_date">Fecha de inicio del negocio</label>
+                        <input type="date" id="businessStartDate" name="business_start_date" required>
+                        <p class="field-hint" data-i18n="hint_business_start_date">Si aun no has empezado, pon la fecha aproximada en que planeas operar.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primaryActivity" data-i18n="label_primary_activity">Actividad principal del negocio</label>
+                        <input type="text" id="primaryActivity" name="primary_activity" required placeholder="Ej: Jardineria y mantenimiento" data-i18n-placeholder="ph_primary_activity">
+                        <p class="field-hint" data-i18n="hint_primary_activity">Describe en pocas palabras la actividad principal. Esto va en la solicitud del EIN.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_expect_employees">Esperas contratar empleados en los proximos 12 meses?</label>
+                        <div class="radio-inline-group">
+                            <label class="radio-inline">
+                                <input type="radio" name="expect_employees" value="yes" required>
+                                <span data-i18n="employees_yes">Si</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="expect_employees" value="no">
+                                <span data-i18n="employees_no">No</span>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="expect_employees" value="unsure">
+                                <span data-i18n="employees_unsure">No estoy seguro</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fiscalYearEnd" data-i18n="label_fiscal_year_end">Fin del ano fiscal</label>
+                        <select id="fiscalYearEnd" name="fiscal_year_end" required>
+                            <option value="december" selected data-i18n="month_december_rec">Diciembre (recomendado)</option>
+                            <option value="january" data-i18n="month_january">Enero</option>
+                            <option value="february" data-i18n="month_february">Febrero</option>
+                            <option value="march" data-i18n="month_march">Marzo</option>
+                            <option value="april" data-i18n="month_april">Abril</option>
+                            <option value="may" data-i18n="month_may">Mayo</option>
+                            <option value="june" data-i18n="month_june">Junio</option>
+                            <option value="july" data-i18n="month_july">Julio</option>
+                            <option value="august" data-i18n="month_august">Agosto</option>
+                            <option value="september" data-i18n="month_september">Septiembre</option>
+                            <option value="october" data-i18n="month_october">Octubre</option>
+                            <option value="november" data-i18n="month_november">Noviembre</option>
+                        </select>
+                        <p class="field-hint" data-i18n="hint_fiscal_year">Casi todos los negocios pequenos usan diciembre. Si no estas seguro, deja diciembre.</p>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="next" data-i18n="btn_next">Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- ========== STEP 7: Casi Listo ========== -->
+                <div class="wizard-step" data-step="7">
+                    <h2 class="step-title" data-i18n="step7_title">Casi Listo</h2>
+                    <p class="step-subtitle" data-i18n="step7_subtitle">Un par de cosas mas y estamos listos.</p>
+
+                    <div class="form-group">
+                        <label for="referralSource" data-i18n="label_referral_source">Como nos encontraste?</label>
+                        <select id="referralSource" name="referral_source">
+                            <option value="" disabled selected data-i18n="referral_placeholder">Selecciona una opcion</option>
+                            <option value="google" data-i18n="referral_google">Google</option>
+                            <option value="facebook" data-i18n="referral_facebook">Facebook / Instagram</option>
+                            <option value="whatsapp" data-i18n="referral_whatsapp">WhatsApp</option>
+                            <option value="friend" data-i18n="referral_friend">Recomendacion de un amigo/familiar</option>
+                            <option value="other" data-i18n="referral_other">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNotes" data-i18n="label_additional_notes">Notas adicionales</label>
+                        <textarea id="additionalNotes" name="additional_notes" rows="3" placeholder="Algo mas que quieras que sepamos..." data-i18n-placeholder="ph_additional_notes"></textarea>
+                    </div>
+
+                    <div class="form-group consent-group">
+                        <label class="consent-label">
+                            <input type="checkbox" name="consent" id="consent" value="yes" required>
+                            <span class="consent-text" data-i18n="consent_text">Entiendo y acepto que Negocio Listo / Poppy Marketing &amp; Consulting LLC no es un bufete de abogados, no ofrece asesoramiento legal, y que los servicios se limitan a la preparacion de documentos conforme al TX Gov Code &sect;406.017. La informacion proporcionada sera utilizada exclusivamente para preparar mis documentos de formacion de LLC.</span>
+                        </label>
+                    </div>
+
+                    <p class="step-disclaimer" data-i18n="mini_disclaimer">Negocio Listo no es un bufete de abogados. Servicio de preparacion de documentos.</p>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn btn-back" data-action="prev" data-i18n="btn_back">Atras</button>
+                        <button type="button" class="btn btn-primary" data-action="submit" data-i18n="btn_submit">Enviar Formulario</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Success Message -->
+            <div class="intake-success" id="intakeSuccess" style="display:none">
+                <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                <h2 data-i18n="success_title">Recibimos tu informacion</h2>
+                <p data-i18n="success_message">Revisaremos tus datos y te contactaremos dentro de 1 dia habil para confirmar los detalles de tu LLC.</p>
+                <a href="https://wa.me/message/NWCGJ4MXZO33G1" class="btn btn-whatsapp" data-i18n="success_whatsapp">Escribenos por WhatsApp si tienes preguntas</a>
+                <a href="/" class="success-home" data-i18n="success_home">Volver al inicio</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="intake-footer">
+        <div class="intake-footer-content">
+            <p class="intake-footer-disclaimer" data-i18n="footer_disclaimer">Negocio Listo es un DBA de Poppy Marketing &amp; Consulting LLC. No somos abogados ni ofrecemos asesoramiento legal. Servicio de preparacion de documentos conforme al TX Gov Code &sect;406.017.</p>
+            <p class="intake-footer-copy">&copy; 2026 Negocio Listo | Poppy Marketing &amp; Consulting LLC</p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons (deferred) -->
+    <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <!-- Intake Form Logic -->
+    <script defer src="intake.js"></script>
+
+</body>
+</html>

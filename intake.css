@@ -1,0 +1,716 @@
+/* ==========================================================================
+   intake.css -- Negocio Listo 7-Step Wizard Intake Form
+   Loaded AFTER styles.min.css. Uses existing CSS custom properties.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. Page Layout
+   -------------------------------------------------------------------------- */
+
+.intake-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+.intake-main {
+  flex: 1;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. Simplified Header
+   -------------------------------------------------------------------------- */
+
+.intake-header {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-medium-gray);
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.intake-header-content {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intake-logo {
+  height: 40px;
+  width: auto;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Form Card
+   -------------------------------------------------------------------------- */
+
+.intake-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 680px;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Progress Bar (7 segments)
+   -------------------------------------------------------------------------- */
+
+.progress-bar {
+  margin-bottom: var(--spacing-lg);
+}
+
+.progress-segments {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.progress-segment {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--color-medium-gray);
+  transition: background-color var(--transition-base);
+}
+
+.progress-segment.completed {
+  background-color: var(--color-accent);
+}
+
+.progress-segment.active {
+  background-color: var(--color-primary);
+}
+
+.progress-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-dark-gray);
+  text-align: center;
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Wizard Steps
+   -------------------------------------------------------------------------- */
+
+.wizard-step {
+  display: none;
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+.wizard-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.step-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-dark-gray);
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. Form Field Overrides & Additions
+   -------------------------------------------------------------------------- */
+
+/* Proper spacing within wizard steps */
+.wizard-step .form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Field hints -- conversational helper text */
+.field-hint {
+  font-size: 0.8125rem;
+  color: var(--color-dark-gray);
+  margin: 4px 0 0 0;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+/* Address fieldset */
+.address-fieldset {
+  border: 1px solid var(--color-medium-gray);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.address-fieldset legend {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  padding: 0 var(--spacing-xs);
+}
+
+/* Side-by-side fields (state + zip) */
+.field-row {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.field-row .form-group {
+  flex: 1;
+}
+
+/* Short input (state) */
+.input-short {
+  max-width: 100px;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. Inline Radio Buttons
+   -------------------------------------------------------------------------- */
+
+.radio-inline-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.radio-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 2px solid var(--color-medium-gray);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  user-select: none;
+}
+
+.radio-inline:hover {
+  border-color: var(--color-primary-light);
+}
+
+.radio-inline input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* When radio is checked, style the parent label */
+.radio-inline:has(input:checked) {
+  border-color: var(--color-primary);
+  background-color: rgba(224, 122, 95, 0.08);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+/* Fallback for browsers without :has() -- use JS to add class */
+.radio-inline.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(224, 122, 95, 0.08);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   7b. Standard Vertical Radio Group
+   -------------------------------------------------------------------------- */
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.radio-standard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-medium-gray);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  user-select: none;
+}
+
+.radio-standard:hover {
+  border-color: var(--color-primary-light);
+}
+
+.radio-standard input[type="radio"] {
+  accent-color: var(--color-primary);
+  min-width: 18px;
+  min-height: 18px;
+  cursor: pointer;
+}
+
+.radio-standard:has(input:checked) {
+  border-color: var(--color-primary);
+  background-color: rgba(224, 122, 95, 0.08);
+}
+
+.radio-standard.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(224, 122, 95, 0.08);
+}
+
+.radio-group.has-error .radio-standard {
+  border-color: #D32F2F;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. Radio Cards (large, tappable)
+   -------------------------------------------------------------------------- */
+
+.radio-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.radio-card {
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-medium-gray);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  min-height: 44px;
+}
+
+.radio-card-content:hover {
+  border-color: var(--color-primary-light);
+  background-color: rgba(224, 122, 95, 0.03);
+}
+
+.radio-card input:checked + .radio-card-content {
+  border-color: var(--color-primary);
+  background-color: rgba(224, 122, 95, 0.06);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.radio-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
+
+.radio-card input:checked + .radio-card-content .radio-card-title {
+  color: var(--color-primary-dark);
+}
+
+.radio-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--color-dark-gray);
+  line-height: 1.45;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. Conditional Fields (animated show/hide)
+   -------------------------------------------------------------------------- */
+
+.conditional-group {
+  display: none;
+  overflow: hidden;
+}
+
+.conditional-group.visible {
+  display: block;
+  animation: slideDown var(--transition-slow) ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   10. Step Navigation
+   -------------------------------------------------------------------------- */
+
+.step-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-medium-gray);
+  gap: var(--spacing-sm);
+}
+
+/* Back button -- outline style */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid var(--color-medium-gray);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-dark-gray);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-back:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+/* Prevent Next/Submit from stretching full width in nav */
+.step-nav .btn-primary {
+  min-width: 160px;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. Mini Disclaimer (every step)
+   -------------------------------------------------------------------------- */
+
+.step-disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-dark-gray);
+  margin: var(--spacing-lg) 0 0 0;
+  padding-top: var(--spacing-sm);
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   12. Consent Checkbox
+   -------------------------------------------------------------------------- */
+
+.consent-group {
+  margin-top: var(--spacing-md);
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.consent-label input[type="checkbox"] {
+  margin-top: 4px;
+  min-width: 20px;
+  min-height: 20px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.consent-text {
+  font-size: 0.8125rem;
+  color: var(--color-dark-gray);
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------------------------------
+   13. Success State
+   -------------------------------------------------------------------------- */
+
+.intake-success {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.success-icon {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+}
+
+.success-icon svg {
+  width: 64px;
+  height: 64px;
+  stroke-width: 1.5;
+}
+
+.intake-success h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.intake-success p {
+  font-family: var(--font-body);
+  color: var(--color-dark-gray);
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.6;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+}
+
+.success-home {
+  display: block;
+  margin-top: var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-dark-gray);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.success-home:hover {
+  color: var(--color-secondary);
+}
+
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+
+.intake-footer {
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  background-color: var(--color-secondary);
+}
+
+.intake-footer-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.intake-footer-disclaimer {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.intake-footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   15. Validation Error States
+   -------------------------------------------------------------------------- */
+
+/* Input error state */
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: #D32F2F;
+  box-shadow: 0 0 0 1px #D32F2F;
+}
+
+.form-group.has-error label {
+  color: #D32F2F;
+}
+
+/* Error message */
+.field-error {
+  font-size: 0.8125rem;
+  color: #D32F2F;
+  margin: 4px 0 0 0;
+  display: none;
+}
+
+.form-group.has-error .field-error {
+  display: block;
+}
+
+/* Radio/checkbox error -- border on group */
+.radio-inline-group.has-error .radio-inline,
+.radio-cards.has-error .radio-card-content {
+  border-color: #D32F2F;
+}
+
+
+/* --------------------------------------------------------------------------
+   16. Responsive -- Mobile First
+   -------------------------------------------------------------------------- */
+
+/* Mobile adjustments (default is mobile-first) */
+@media (max-width: 480px) {
+  .intake-main {
+    padding: var(--spacing-sm);
+  }
+
+  .intake-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  /* Full-width buttons on small screens */
+  .step-nav {
+    flex-direction: column-reverse;
+    gap: var(--spacing-xs);
+  }
+
+  .step-nav .btn-primary,
+  .step-nav .btn-back {
+    width: 100%;
+    text-align: center;
+  }
+
+  .step-nav .btn-primary {
+    min-width: unset;
+  }
+
+  /* Inline radios wrap */
+  .radio-inline-group {
+    gap: 6px;
+  }
+
+  .radio-inline {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .field-row {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .input-short {
+    max-width: none;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .intake-main {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .intake-card {
+    padding: var(--spacing-xl);
+  }
+
+  .step-title {
+    font-size: 1.625rem;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   17. Utilities
+   -------------------------------------------------------------------------- */
+
+/* Hide class for JS toggling */
+.hidden {
+  display: none !important;
+}
+
+/* Focus styles for accessibility */
+.intake-page input:focus,
+.intake-page select:focus,
+.intake-page textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.intake-page button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled button state */
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
