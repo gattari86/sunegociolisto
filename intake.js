@@ -858,6 +858,9 @@
           lucide.createIcons();
         }
 
+        // Update WhatsApp link for current language
+        updateWhatsAppLink();
+
         // GA4 conversion event
         if (window.gtag) {
           gtag('event', 'intake_complete', {});
@@ -881,6 +884,18 @@
         submitBtn.textContent = T[currentLang].btn_submit;
       }, 3000);
     });
+  }
+
+  // ----------------------------------------------------------
+  // WhatsApp link (language-aware pre-filled message)
+  // ----------------------------------------------------------
+  function updateWhatsAppLink() {
+    var waLink = document.getElementById('whatsappLink');
+    if (!waLink) return;
+    var msg = currentLang === 'en'
+      ? 'Hi, I just completed the intake form and have a question.'
+      : 'Hola, acabo de completar el formulario de inicio y tengo una pregunta.';
+    waLink.href = 'https://wa.me/12812064198?text=' + encodeURIComponent(msg);
   }
 
   // ----------------------------------------------------------
@@ -968,6 +983,8 @@
         if (hl) {
           hl.value = currentLang;
         }
+        // Update WhatsApp link for new language
+        updateWhatsAppLink();
         // Update URL param without reload
         var url = new URL(window.location);
         if (currentLang === 'en') {
