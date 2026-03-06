@@ -402,6 +402,7 @@ svg.icon-sm { width: 18px; height: 18px; }
         font-size: 0.85rem;
     }
     .table-wrap td:first-child .table-subtext { color: rgba(255,255,255,0.8); }
+    .table-wrap td:first-child strong { color: var(--color-white); }
     .table-wrap td:nth-child(2) { border-right: 1px solid var(--color-medium-gray); }
     .table-wrap td:nth-child(2)::before,
     .table-wrap td:nth-child(3)::before {
