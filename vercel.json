@@ -8,6 +8,8 @@
         { "source": "/blog/cuanto-cuesta-llc-en-texas", "destination": "/blog/cuanto-cuesta-llc-en-texas.html" },
         { "source": "/blog/llc-en-espanol-texas", "destination": "/blog/llc-en-espanol-texas.html" },
         { "source": "/blog/que-es-ein-como-obtenerlo-itin", "destination": "/blog/que-es-ein-como-obtenerlo-itin.html" },
+        { "source": "/blog/llc-impuestos-texas", "destination": "/blog/llc-impuestos-texas.html" },
+        { "source": "/blog/llc-vs-dba-texas", "destination": "/blog/llc-vs-dba-texas.html" },
         { "source": "/intake", "destination": "/intake.html" },
         { "source": "/(.*)", "destination": "/index.html" }
     ],
