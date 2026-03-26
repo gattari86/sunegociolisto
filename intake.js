@@ -895,7 +895,7 @@
     var msg = currentLang === 'en'
       ? 'Hi, I just completed the intake form and have a question.'
       : 'Hola, acabo de completar el formulario de inicio y tengo una pregunta.';
-    waLink.href = 'https://wa.me/12812064198?text=' + encodeURIComponent(msg);
+    waLink.href = 'https://wa.me/12814754458?text=' + encodeURIComponent(msg);
   }
 
   // ----------------------------------------------------------
