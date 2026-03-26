@@ -11,6 +11,7 @@
         { "source": "/blog/llc-impuestos-texas", "destination": "/blog/llc-impuestos-texas.html" },
         { "source": "/blog/llc-vs-dba-texas", "destination": "/blog/llc-vs-dba-texas.html" },
         { "source": "/intake", "destination": "/intake.html" },
+        { "source": "/gracias", "destination": "/gracias.html" },
         { "source": "/(.*)", "destination": "/index.html" }
     ],
     "headers": [
